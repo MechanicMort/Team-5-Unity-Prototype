@@ -5,10 +5,21 @@ using UnityEngine;
 public class DestroyBullet : MonoBehaviour
 {
     public GameObject obj;
+    public GameObject paintSplatter;
 
-    // Start is called before the first frame update
-    private void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        Destroy(obj, 2);
-    }    
+        if(collision.gameObject.tag == "Wall")
+        {
+            GameObject temp = Instantiate(paintSplatter, collision.GetContact(0).point, Quaternion.FromToRotation(-Vector3.forward, collision.GetContact(0).point));
+
+            //temp.transform.Rotate(Vector3.forward * 90);
+            //temp.transform.LookAt(obj.transform.position);
+            //temp.transform.Translate(-Vector3.forward * 0.1f);
+            
+            Destroy(obj);
+
+
+        }
+    }
 }

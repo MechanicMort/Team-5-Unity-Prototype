@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunScript : MonoBehaviour
 {
     public Transform origin;
     public GameObject bullet;
     public float speed = 50f;
+    public Text ammoCountText;
 
     private void Update()
     {

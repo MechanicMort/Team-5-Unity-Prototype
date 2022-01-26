@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 4204093134777823205}
+  paintSplatter: {fileID: 5781521927981723603, guid: b90366db6c190bf45947aa268918c74f, type: 3}
