@@ -68,7 +68,8 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ExplosiveScript.cs" />
     <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
-    <Compile Include="Assets\Scripts\NewInputSystemMovement.cs" />
+    <Compile Include="Assets\Scripts\InputSystemTest.cs" />
+    <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StarterAssets\Environment\Shaders\Built-in_RP\Triplanar.shader" />
