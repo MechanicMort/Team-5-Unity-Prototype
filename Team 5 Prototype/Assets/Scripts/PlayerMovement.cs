@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         Movement();
         Crouching();
         CheckForGrounded();
-        OnDrawGizmos();
+        //OnDrawGizmos();
 
     }
 
@@ -48,10 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Jumping()
     {
-        if (Input.GetKey(KeyCode.Space) && playerOnGround)
+        if (Input.GetKey(KeyCode.Space)) //&& playerOnGround)
         {
             rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-            playerOnGround = false;
+            //playerOnGround = false;
         }
     }
 
@@ -66,9 +66,9 @@ public class PlayerMovement : MonoBehaviour
         //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(origin.transform.position, 1f);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(origin.transform.position, 1f);
+    //}
 }
