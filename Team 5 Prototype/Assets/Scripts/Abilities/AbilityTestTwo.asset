@@ -15,3 +15,4 @@ MonoBehaviour:
   coolDown: 3
   abilityName: No
   abilityOwner: {fileID: 0}
+  abilitySprite: {fileID: 21300000, guid: b3c30bcb3036bd747ad9fd1c7852a999, type: 3}

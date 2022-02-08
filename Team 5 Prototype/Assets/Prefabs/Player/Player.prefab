@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8318502091064045456}
   - component: {fileID: 8318502091064045463}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: PLayer Aimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 8318502092369714390}
   - component: {fileID: 8318502092369714389}
   - component: {fileID: 8318502092369714388}
-  - component: {fileID: 8318502092369714395}
+  - component: {fileID: 2086780441}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -218,7 +218,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092369714394}
-  m_LocalRotation: {x: -0, y: 0.9171371, z: -0, w: 0.39857203}
+  m_LocalRotation: {x: 0, y: 0.9171366, z: 0, w: 0.39857292}
   m_LocalPosition: {x: 2.3338282, y: 1.854, z: -2.0865507}
   m_LocalScale: {x: 1.25, y: 2, z: 1.25}
   m_Children:
@@ -300,14 +300,14 @@ Rigidbody:
   m_GameObject: {fileID: 8318502092369714394}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!114 &8318502092369714395
+  m_CollisionDetection: 1
+--- !u!114 &2086780441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,14 +316,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 8318502092369714394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7703c75c2d3238e45a59491cac71904b, type: 3}
+  m_Script: {fileID: 11500000, guid: b843d6a263d8e6f45bcc520cb6353d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8318502092369714388}
-  moveSpeed: 12
-  jumpForce: 10
-  playerOnGround: 1
-  origin: {fileID: 8318502091805469857}
+  playerShieldRegen: 1
+  playerHealthRegen: 0.1
+  playerRegenTimer: 0.1
+  regenTimerDone: 0
+  playerOverHealth: 0
+  playerOverShield: 0
+  playerHealth: 100
+  playerHealthMax: 100
+  playerShield: 100
+  playerShieldMax: 100
+  playerDamage: 0
+  playerAttackSpeed: 0
+  playerArmour: 0
+  playerDuration: 0
+  abilityOne: {fileID: 11400000, guid: dc3973258d1250748b06a415820ab7b9, type: 2}
+  abilityOneCoolDown: 0
+  abilityTwo: {fileID: 11400000, guid: 07be32dc89b2a9e44837e2a0932e3c4d, type: 2}
+  abilityTwoCoolDown: 0
+  Ultimate: {fileID: 11400000, guid: 6c254afbf8590d4429cb4b5146777fcc, type: 2}
+  ultimateCoolDown: 0
+  rb: {fileID: 0}
+  moveSpeed: 1200
+  jumpForce: 400
+  isGrounded: 1
+  origin: {fileID: 0}
 --- !u!1 &8318502092494901912
 GameObject:
   m_ObjectHideFlags: 0
