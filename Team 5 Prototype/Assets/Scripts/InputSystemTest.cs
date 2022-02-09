@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class InputSystemTest : MonoBehaviour
 {
     public Rigidbody rb;
-    private PlayerInput playerInput;
+    //private PlayerInput playerInput;
     public float speed = 10f;
     private PlayerInputActions playerInputActions = new PlayerInputActions();
 
@@ -14,8 +15,8 @@ public class InputSystemTest : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerInput = GetComponent<PlayerInput>();
-                
+        //playerInput = GetComponent<PlayerInput>();
+
         playerInputActions.Player.Enable();
         playerInputActions.Player.Jump.performed += Jump;
         playerInputActions.Player.Movement.performed += Movement_performed;
@@ -31,7 +32,7 @@ public class InputSystemTest : MonoBehaviour
         Debug.Log(context);
         Vector2 inputVector = context.ReadValue<Vector2>();
         rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
-    }    
+    }
 
     public void Jump(InputAction.CallbackContext context)
     {
@@ -41,7 +42,7 @@ public class InputSystemTest : MonoBehaviour
             Debug.Log("Jump" + context.phase);
             rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
         }
-        
+
     }
 }
 
