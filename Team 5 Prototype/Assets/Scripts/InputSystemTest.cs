@@ -8,14 +8,15 @@ public class InputSystemTest : MonoBehaviour
     public Rigidbody rb;
     private PlayerInput playerInput;
     public float speed = 10f;
-    private PlayerInputActions playerInputActions = new PlayerInputActions();
+    private PlayerInputActions playerInputActions;
 
 
-    private void Start()
+    public void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
-                
+        playerInputActions = new PlayerInputActions();
+        //playerInputActions.Enable();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Jump.performed += Jump;
         playerInputActions.Player.Movement.performed += Movement_performed;
@@ -33,7 +34,7 @@ public class InputSystemTest : MonoBehaviour
         rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
     }    
 
-    public void Jump(InputAction.CallbackContext context)
+    private void Jump(InputAction.CallbackContext context)
     {
         Debug.Log(context);
         if (context.performed)
