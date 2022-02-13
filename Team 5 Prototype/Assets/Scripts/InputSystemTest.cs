@@ -25,7 +25,12 @@ public class InputSystemTest : MonoBehaviour
     private void Update()
     {
         Vector2 inputVector = playerInputActions.Player.Movement.ReadValue<Vector2>();
-        rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
+        
+
+        Vector3 movePos = transform.right * inputVector.x + transform.forward * inputVector.y;
+        Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z) * speed;
+        rb.velocity = newMovePos;
+
     }
     private void Movement_performed(InputAction.CallbackContext context)
     {
