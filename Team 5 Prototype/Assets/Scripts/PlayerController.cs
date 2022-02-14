@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+
+    [Header("Player Stats")]
     public float playerShieldRegen;
     public float playerHealthRegen;
 
@@ -17,12 +20,13 @@ public class PlayerController : MonoBehaviour
     public float playerHealthMax;
     public float playerShield;
     public float playerShieldMax;
-    public float playerSpeed;
+
     public float playerDamage;
     public float playerAttackSpeed;
     public float playerArmour;
     public float playerDuration;
 
+    [Header("Player Abilities")]
     public Ability abilityOne;
     public float abilityOneCoolDown;
     public Ability abilityTwo;
@@ -31,12 +35,71 @@ public class PlayerController : MonoBehaviour
     public float ultimateCoolDown;
 
 
+    [Header("Player Movement")]
+    public Rigidbody rb;
+    public float moveSpeed = 12f;
+    public float jumpForce = 10f;
+    public bool isGrounded = true;
+    public GameObject origin;
+
+    int layerMask = 1 << 8;
+
+
+
+
+    private void FixedUpdate()
+    {
+        Jumping();
+    }
+
+    void Movement()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) { moveSpeed = 24f; }
+        else { moveSpeed = 12f; }
+
+        float x = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        float y = Input.GetAxisRaw("Vertical") * moveSpeed;
+
+        Vector3 movePos = transform.right * x + transform.forward * y ;
+        Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
+        rb.velocity = newMovePos;
+    }
+
+    void Jumping()
+    {
+        rb.AddForce(new Vector3(0, -35 * Time.deltaTime, 0), ForceMode.Impulse);
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+
+
+    void CheckForGrounded()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2.5f, layerMask))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        //  Gizmos.color = Color.red;
+        //   Gizmos.DrawSphere(origin.transform.position, 1f);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
+        rb = GetComponent<Rigidbody>();
+        //these will be set by the game controller once class select is in place
         abilityOne.abilityOwner = this.gameObject;
         abilityTwo.abilityOwner = this.gameObject;
-      //  Ultimate.abilityOwner = this.gameObject;
+        Ultimate.abilityOwner = this.gameObject;
 
         abilityOneCoolDown = abilityOne.coolDown;
         StartCoroutine(RegenTimerTicker());
@@ -76,19 +139,20 @@ public class PlayerController : MonoBehaviour
 
     void UseAbilities()
     {
-        if (abilityOneCoolDown <= 0)
+        if (abilityOneCoolDown <= 0 && Input.GetKeyDown(KeyCode.Q))
         {
             abilityOne.DoAbility();
             abilityOneCoolDown = abilityOne.coolDown;
         }
-        if (abilityTwoCoolDown <= 0)
+        if (abilityTwoCoolDown <= 0 && Input.GetKeyDown(KeyCode.E))
         {
             abilityTwo.DoAbility();
             abilityTwoCoolDown = abilityTwo.coolDown;
         }
+        if (ultimateCoolDown <= 0 && Input.GetKeyDown(KeyCode.X))
         {
-            //if for using abiliteis 
-
+            Ultimate.DoAbility();
+            ultimateCoolDown = Ultimate.coolDown;
         }
     }
 
@@ -96,6 +160,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Movement();
+        CheckForGrounded();
+        OnDrawGizmos();
         UseAbilities();
         RegenPlayer();
         OverCalcs();
@@ -136,6 +203,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float Damage)
     {
+        print("took Damage");
         regenTimerDone = playerRegenTimer;
         if (playerShield > 0)
         {

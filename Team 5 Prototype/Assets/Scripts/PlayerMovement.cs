@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(origin.transform.position, 1f);
+      //  Gizmos.color = Color.red;
+     //   Gizmos.DrawSphere(origin.transform.position, 1f);
     }
 }
