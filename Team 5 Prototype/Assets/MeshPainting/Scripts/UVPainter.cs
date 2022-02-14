@@ -23,6 +23,7 @@ public class UVPainter : MonoBehaviour
         {
             Ray mouseRay = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit info;
+            Debug.DrawRay(mouseRay.origin,mouseRay.direction,Color.red, 500);
             if(Physics.Raycast(mouseRay, out info))
             {
                 var paintController = info.transform.GetComponent<UVPaintController>();
@@ -32,6 +33,7 @@ public class UVPainter : MonoBehaviour
                     Vector3 mask = Input.GetMouseButton(0) ? new Vector3(1, 0, 0) : new Vector3(0, 1, 0);
                     paintController.PaintOnGO(info.point, dir, mask, 1);
                 }
+
             }
 
         }

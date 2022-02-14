@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.ProBuilder;
 
 public class UVPaintController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UVPaintController : MonoBehaviour
     private Material matUVPaint;
     private MeshRenderer renderer;
     private MeshFilter filter;
+    private MeshFilter proFiler;
     private Texture2D tex;
 
     public delegate void OnUVPaintControllerInit();
@@ -33,7 +35,7 @@ public class UVPaintController : MonoBehaviour
         filter = GetComponent<MeshFilter>();
         if (!renderer || !filter)
         {
-            throw new MissingComponentException();
+            throw new MissingComponentException();  
         }
         renderTextureTemp = UVPaintManager.instance.rtTemp;
         matUVPaint = UVPaintManager.instance.matPaint;

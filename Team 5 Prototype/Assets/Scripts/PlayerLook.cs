@@ -9,7 +9,12 @@ public class PlayerLook : MonoBehaviour
 
     private float x = 0;
     private float y = 0;
-   
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;   
+    }
+
     void Update()
     {
         x += -Input.GetAxis("Mouse Y") * mouseSen;

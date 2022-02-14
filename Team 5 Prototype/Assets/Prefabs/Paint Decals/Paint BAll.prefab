@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4055511439696226171}
   - component: {fileID: -2224256480240118290}
   - component: {fileID: -8751165829128586534}
+  - component: {fileID: 2303258244133219600}
   m_Layer: 0
   m_Name: Paint BAll
   m_TagString: Untagged
@@ -127,3 +128,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 4204093134777823205}
   paintSplatter: {fileID: 5781521927981723603, guid: b90366db6c190bf45947aa268918c74f, type: 3}
+--- !u!114 &2303258244133219600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204093134777823205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b2ef7dbb9388e4e875d35bfaa4e931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

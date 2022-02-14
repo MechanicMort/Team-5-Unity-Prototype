@@ -29,14 +29,14 @@ public class InputSystemTest : MonoBehaviour
     }
     private void Movement_performed(InputAction.CallbackContext context)
     {
-        Debug.Log(context);
+     //   Debug.Log(context);
         Vector2 inputVector = context.ReadValue<Vector2>();
         rb.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
     }    
 
     private void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log(context);
+      //  Debug.Log(context);
         if (context.performed)
         {
             Debug.Log("Jump" + context.phase);

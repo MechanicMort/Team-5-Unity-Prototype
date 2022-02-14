@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        
         Debug.Log(LayerMask.LayerToName(layerMask));
         rb = GetComponent<Rigidbody>();
     }
@@ -62,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckForGrounded()
     {
-        RaycastHit hit;        
+      //  RaycastHit hit;        
     }
 
     private void OnDrawGizmos()
