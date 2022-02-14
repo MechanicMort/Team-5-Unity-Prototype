@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 33ab377b49aa14f6fae6e5bac230a5d4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.11616766, g: 0.42415455, b: 0.7301588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9976,11 +9976,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!20 &294612741 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8318502092494901915, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
-  m_PrefabInstance: {fileID: 8318502091400563356}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &300923112
 Mesh:
   m_ObjectHideFlags: 0
@@ -21527,6 +21522,11 @@ Transform:
   m_Father: {fileID: 1674809173}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &671381729 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8318502092494901908, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+  m_PrefabInstance: {fileID: 1600104518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &683743693
 Mesh:
   m_ObjectHideFlags: 0
@@ -22024,6 +22024,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8318502092369714394, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
   m_PrefabInstance: {fileID: 8318502091400563356}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &699467667 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8318502092369714384, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+  m_PrefabInstance: {fileID: 8318502091400563356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &699467668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22053,7 +22058,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 294612741}
+  m_Camera: {fileID: 0}
 --- !u!43 &718270084
 Mesh:
   m_ObjectHideFlags: 0
@@ -28257,6 +28262,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &945601948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8318502092494901908, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+  m_PrefabInstance: {fileID: 8318502091400563356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &958225231
 Mesh:
   m_ObjectHideFlags: 0
@@ -39772,6 +39782,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1492456081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8318502092369714384, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+  m_PrefabInstance: {fileID: 1600104518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1497547235
 GameObject:
   m_ObjectHideFlags: 0
@@ -46068,6 +46083,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861437583168674336, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 671381729}
+    - target: {fileID: 861437583168674336, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1492456081}
     - target: {fileID: 8318502092369714384, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -46112,9 +46135,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8318502092369714390, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: de3f8021d12ea624099c3d6531545fff, type: 2}
     - target: {fileID: 8318502092369714394, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
       propertyPath: m_Name
       value: Red Team
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318502092369714394, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318502092369714395, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318502092494901909, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8318502092494901915, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -63151,6 +63190,14 @@ PrefabInstance:
       propertyPath: speed
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 861437583168674336, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 945601948}
+    - target: {fileID: 861437583168674336, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 699467667}
     - target: {fileID: 8318502092369714384, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -63203,13 +63250,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8318502092494901909, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8318502092494901915, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8318502092494901915, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
