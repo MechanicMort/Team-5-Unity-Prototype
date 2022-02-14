@@ -16,11 +16,15 @@ public class ProjectilePaint : MonoBehaviour
         {
             Vector3 dir = transform.TransformDirection(Vector3.down).normalized;
             var paintController = hit.transform.GetComponent<UVPaintController>();
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Vector3 mask = Input.GetMouseButton(0) ? new Vector3(1, 0, 0) : new Vector3(0, 1, 0);
-            Debug.Log("Did Hit");
-            paintController.PaintOnGO(hit.point, dir, mask, 1);
+            if (paintController != null)
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Vector3 mask = Input.GetMouseButton(0) ? new Vector3(1, 0, 0) : new Vector3(0, 1, 0);
+                Debug.Log("Did Hit");
+                paintController.PaintOnGO(hit.point, dir, mask, 1);
+            }
         }
+
 
 
     }

@@ -21,11 +21,6 @@ public class PlayerController : MonoBehaviour
     public float playerShield;
     public float playerShieldMax;
 
-    public float playerDamage;
-    public float playerAttackSpeed;
-    public float playerArmour;
-    public float playerDuration;
-
     [Header("Player Abilities")]
     public Ability abilityOne;
     public float abilityOneCoolDown;

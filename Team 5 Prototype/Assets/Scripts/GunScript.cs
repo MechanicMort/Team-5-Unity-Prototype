@@ -10,10 +10,13 @@ public class GunScript : MonoBehaviour
     public Transform origin;
     public GameObject bullet;
     public float speed = 50f;
+    public float shots;
+    public Light spotLight;
     public Text ammoCountText;
     public float fireRate;
     public float fireRateCounter;
     public float damage;
+    public Camera camera;
 
     private void Start()
     {
@@ -23,6 +26,7 @@ public class GunScript : MonoBehaviour
     }
     private void Update()
     {
+
         ammoCountText.text = ammoCount + "/" + magazineSize;
         if (Input.GetButton("Fire1") && fireRateCounter <= 0 && ammoCount !=0)
         {
@@ -41,15 +45,22 @@ public class GunScript : MonoBehaviour
 
     void ShootingBullet()
     {
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < shots; i++)
         {
+            float radius = Mathf.Tan(Mathf.Deg2Rad * spotLight.spotAngle / 2) * spotLight.range;
+            Vector2 circle = Random.insideUnitCircle * radius;
+            Vector3 target = spotLight.transform.position + spotLight.transform.forward * spotLight.range + spotLight.transform.rotation * new Vector3(circle.x, circle.y);
+
+            
             GameObject proj = Instantiate(bullet, origin.position, bullet.transform.rotation);
+
             proj.GetComponent<DamagePlayer>().damageDelt = damage;
             proj.GetComponent<DamagePlayer>().whatTeam =gameObject.layer;
 
             Rigidbody rig = proj.GetComponent<Rigidbody>();
+            proj.transform.LookAt( target);
+            rig.AddForce(Vector3.MoveTowards(transform.position,target,speed) ,ForceMode.VelocityChange);
 
-            rig.AddForce(origin.forward * speed, ForceMode.Impulse);
         }
         
     }
