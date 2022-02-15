@@ -10,10 +10,11 @@ public class InputSystemTest : MonoBehaviour
     public float speed = 10f;
     private PlayerInputActions playerInputActions;
     public Transform player;
-    public Transform camera; 
-    public float sens = 1f;
-    private float x;
-    private float y;
+    public Transform camera;
+    public float jumpForce = 5f;
+    public float sens = 0.0005f;
+    private float mX;
+    private float mY;
 
 
 
@@ -30,43 +31,34 @@ public class InputSystemTest : MonoBehaviour
 
     private void Look_performed(InputAction.CallbackContext context)
     {
-        //Vector2 inputVector = playerInputActions.Player.Look.ReadValue<Vector2>();
-
-        //x += inputVector.y;
-        //y += inputVector.x;
-        //x = Mathf.Clamp(x, -90, 90);
-
-        //camera.transform.localRotation = Quaternion.Euler(x, 0, 0);
-        //transform.localRotation = Quaternion.Euler(0, y, 0);
-
-
+       
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         //Movement
         Vector2 inputVector = playerInputActions.Player.Movement.ReadValue<Vector2>();
         Vector3 movePos = transform.right * inputVector.x + transform.forward * inputVector.y;
-        Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z) * speed;
+        Vector3 newMovePos = new Vector3(movePos.x, -80.0f * Time.deltaTime, movePos.z) * speed;
         rb.velocity = newMovePos;
-
-        //Camera
-        Vector2 caminputVector = playerInputActions.Player.Look.ReadValue<Vector2>();
-        x += caminputVector.y * sens;
-        y += caminputVector.x * sens;
-        x = Mathf.Clamp(x, -90, 90);
-        camera.transform.localRotation = Quaternion.Euler(x, 0, 0);
-        transform.localRotation = Quaternion.Euler(0, y, 0);
+        
 
         
+
+
+        //Camera
+        Vector2 camInputVector = playerInputActions.Player.Look.ReadValue<Vector2>();
+        mX += camInputVector.x;
+        mY -= camInputVector.y;
+
+        mY = Mathf.Clamp(mY, -90, 90);
+        camera.transform.localRotation = Quaternion.Euler(mY, 0, 0);
+        player.transform.localRotation = Quaternion.Euler(0, mX, 0);
 
     }
     private void Movement_performed(InputAction.CallbackContext context)
     {
-        Vector2 inputVector = playerInputActions.Player.Movement.ReadValue<Vector2>();
-        Vector3 movePos = transform.right * inputVector.x + transform.forward * inputVector.y;
-        Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z) * speed;
-        rb.velocity = newMovePos;
+        
     }    
 
     private void Jump(InputAction.CallbackContext context)
@@ -75,7 +67,7 @@ public class InputSystemTest : MonoBehaviour
         if (context.performed)
         {
             Debug.Log("Jump" + context.phase);
-            rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, jumpForce *Time.deltaTime, 0), ForceMode.Impulse);
         }
         
     }
