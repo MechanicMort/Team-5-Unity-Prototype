@@ -438,11 +438,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8318502092369714388}
-  speed: 125
+  speed: 25
   player: {fileID: 8318502092369714384}
   camera: {fileID: 4029035117682552756}
-  jumpForce: 10
-  sens: 10
+  jumpForce: 150
+  sens: 2
 --- !u!114 &-7142750655660441527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +469,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 790096725079268048}
