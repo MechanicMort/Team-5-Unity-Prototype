@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshPainting\Shaders\PaintOnUV.shader" />
+    <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
