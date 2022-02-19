@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-[CreateAssetMenu(fileName = "AbilityTestOne" , menuName = "Abilities")]
+[CreateAssetMenu(fileName = "DefaultAbility" , menuName = "Ability")]
 public class Ability : ScriptableObject
 {
     public float coolDown;

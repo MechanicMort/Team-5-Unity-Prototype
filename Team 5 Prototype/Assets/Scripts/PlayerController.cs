@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
     public float playerShield;
     public float playerShieldMax;
 
+    [Header("Weapons")]
+    public WeaponStats heldWeapon;
+    private GunScript thisGun;
+
+    [Header("Player Class")]
+    public ClassHolder currentClass;
+
+
     [Header("Player Abilities")]
     public Ability abilityOne;
     public float abilityOneCoolDown;
@@ -32,8 +40,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Movement")]
     public Rigidbody rb;
-    public float moveSpeed = 12f;
-    public float jumpForce = 10f;
+    public float moveSpeed ;
+    public float jumpForce;
     public bool isGrounded = true;
     public GameObject origin;
 
@@ -41,6 +49,52 @@ public class PlayerController : MonoBehaviour
 
 
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        thisGun = GetComponent<GunScript>();
+        rb = GetComponent<Rigidbody>();
+        //these will be set by the game controller once class select is in place
+        abilityOne.abilityOwner = this.gameObject;
+        abilityTwo.abilityOwner = this.gameObject;
+        Ultimate.abilityOwner = this.gameObject;
+
+        abilityOneCoolDown = abilityOne.coolDown;
+        StartCoroutine(RegenTimerTicker());
+        StartCoroutine(AbilityCoolDowns());
+        ApplyWeaponStats();
+        ApplyClass();
+    }
+    void Update()
+    {
+        Movement();
+        CheckForGrounded();
+        UseAbilities();
+        RegenPlayer();
+        OverCalcs();
+    }
+
+
+    public void ApplyWeaponStats()
+    {
+        thisGun.fireRate = heldWeapon.fireRate;
+        thisGun.magazineSize = heldWeapon.magSize;
+        thisGun.damage = heldWeapon.damage;
+        thisGun.spotLight.spotAngle = heldWeapon.accuracy;
+        thisGun.speed = heldWeapon.pelletSpeed;
+        thisGun.shots = heldWeapon.pelletCount;
+        
+    }
+    public void ApplyClass()
+    {
+        playerHealthMax = currentClass.HealthMax;
+        playerShieldMax = currentClass.ShieldMax;
+        playerShieldRegen = currentClass.ShieldRegen;
+        playerHealthRegen = currentClass.HealthRegen;
+        moveSpeed = currentClass.moveSpeed;
+        jumpForce = currentClass.jumpForce;
+
+    }
 
     private void FixedUpdate()
     {
@@ -80,32 +134,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        //  Gizmos.color = Color.red;
-        //   Gizmos.DrawSphere(origin.transform.position, 1f);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        rb = GetComponent<Rigidbody>();
-        //these will be set by the game controller once class select is in place
-        abilityOne.abilityOwner = this.gameObject;
-        abilityTwo.abilityOwner = this.gameObject;
-        Ultimate.abilityOwner = this.gameObject;
-
-        abilityOneCoolDown = abilityOne.coolDown;
-        StartCoroutine(RegenTimerTicker());
-        StartCoroutine(AbilityCoolDowns());
-    }
 
     private IEnumerator AbilityCoolDowns()
     {
-        abilityOneCoolDown -= 0.05f;
-        abilityTwoCoolDown -= 0.05f;
-        ultimateCoolDown -= 0.05f;
+        if (abilityOneCoolDown > 0f)
+        {
+            abilityOneCoolDown -= 0.05f;
+        }
+        if (abilityTwoCoolDown > 0f)
+        {
+            abilityTwoCoolDown -= 0.05f;
+        }
+        if (ultimateCoolDown > 0f)
+        {
+            ultimateCoolDown -= 0.05f;
+        }
         yield return new WaitForSeconds(0.05f);
         StartCoroutine(AbilityCoolDowns());
     }
@@ -153,15 +196,7 @@ public class PlayerController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
-    {
-        Movement();
-        CheckForGrounded();
-        OnDrawGizmos();
-        UseAbilities();
-        RegenPlayer();
-        OverCalcs();
-    }
+
 
     private void OverCalcs()
     {
