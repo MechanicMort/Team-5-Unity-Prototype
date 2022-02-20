@@ -20,7 +20,6 @@ public class ProjectilePaint : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 Vector3 mask = Input.GetMouseButton(0) ? new Vector3(1, 0, 0) : new Vector3(0, 1, 0);
-                Debug.Log("Did Hit");
                 paintController.PaintOnGO(hit.point, dir, mask, 1);
             }
         }

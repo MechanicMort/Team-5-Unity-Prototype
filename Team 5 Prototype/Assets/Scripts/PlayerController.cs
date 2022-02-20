@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
 
+
+    public Image debugColour;
 
     [Header("Player Stats")]
     public float playerShieldRegen;
@@ -72,9 +77,31 @@ public class PlayerController : MonoBehaviour
         UseAbilities();
         RegenPlayer();
         OverCalcs();
+        getColour();
     }
 
+    private void getColour()
+    {
 
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            RaycastHit raycastHit;
+            
+            if (Physics.Raycast(transform.position, -Vector3.up, out raycastHit))
+            {
+                Renderer renderer = raycastHit.collider.GetComponent<MeshRenderer>();
+                Texture2D texture2D = renderer.material.GetTexture("_TexMask") as Texture2D;
+                Vector2 pCoord = raycastHit.textureCoord2;
+                print(pCoord);
+                pCoord.x *= texture2D.width;
+                pCoord.y *= texture2D.height;
+                Vector2 tiling = renderer.material.mainTextureScale;
+                Color color = texture2D.GetPixel(Mathf.FloorToInt(pCoord.x ), Mathf.FloorToInt(pCoord.y));
+                debugColour.color = color;
+            }
+            
+        }
+    }
     public void ApplyWeaponStats()
     {
         thisGun.fireRate = heldWeapon.fireRate;
@@ -90,7 +117,7 @@ public class PlayerController : MonoBehaviour
         playerHealthMax = currentClass.HealthMax;
         playerShieldMax = currentClass.ShieldMax;
         playerShieldRegen = currentClass.ShieldRegen;
-        playerHealthRegen = currentClass.HealthRegen;
+        playerHealthRegen = currentClass.HealthRegen;   
         moveSpeed = currentClass.moveSpeed;
         jumpForce = currentClass.jumpForce;
 
