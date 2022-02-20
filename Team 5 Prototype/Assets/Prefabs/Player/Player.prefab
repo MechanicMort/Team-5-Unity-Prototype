@@ -282,10 +282,11 @@ GameObject:
   - component: {fileID: 8318502092369714390}
   - component: {fileID: 8318502092369714389}
   - component: {fileID: 8318502092369714388}
-  - component: {fileID: 861437583168674336}
   - component: {fileID: 699467662}
   - component: {fileID: 699467664}
+  - component: {fileID: 2002197948861842748}
   - component: {fileID: 699467668}
+  - component: {fileID: 667177643}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -389,20 +390,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &861437583168674336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8318502092369714394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d21f5d75444bfea42b72109e1cae3f27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 8318502092369714388}
-  speed: 3
 --- !u!114 &699467662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +421,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092369714394}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b843d6a263d8e6f45bcc520cb6353d50, type: 3}
   m_Name: 
@@ -460,6 +447,18 @@ MonoBehaviour:
   jumpForce: 10
   isGrounded: 1
   origin: {fileID: 0}
+--- !u!114 &2002197948861842748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8318502092369714394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725484c5f4b4b354f890e618f8d5574c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &699467668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 7babbc319ce6fd04ca511a2e85be6ca0, type: 3}
-  m_NotificationBehavior: 3
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -484,12 +483,47 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1dff775-050f-4c4e-b445-293feac67c08
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 667177643}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9a506eed-dda3-40ac-97c7-7d24cc692619
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 8318502092494901915}
+--- !u!114 &667177643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8318502092369714394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dffd5bff02e3554692430a15a1f8fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 12
+  jumpHeight: 1
+  gravityValue: -9.81
 --- !u!1 &8318502092494901912
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092494901912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 1.6, z: -4.73}
+  m_LocalPosition: {x: 0.2, y: 1.42, z: -4.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1376459844}

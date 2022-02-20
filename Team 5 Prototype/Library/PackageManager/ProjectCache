@@ -234,11 +234,13 @@ m_PackageAssets:
         - 1.14.7
         - 1.14.9
         - 1.14.12
+        - 1.14.13
         - 1.15.1
         - 1.15.4
         - 1.15.7
         - 1.15.9
         - 1.15.12
+        - 1.15.13
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -253,6 +255,7 @@ m_PackageAssets:
         - 1.15.7
         - 1.15.9
         - 1.15.12
+        - 1.15.13
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -263,7 +266,7 @@ m_PackageAssets:
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
-        verified: 1.15.12
+        verified: 1.15.13
       dependencies:
       - name: com.unity.nuget.newtonsoft-json
         version: 2.0.0

@@ -40,7 +40,7 @@ public class InputSystemTest : MonoBehaviour
         if (context.performed)
         {
             Debug.Log("Jump" + context.phase);
-            rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * 50f, ForceMode.Impulse);
         }
         
     }
