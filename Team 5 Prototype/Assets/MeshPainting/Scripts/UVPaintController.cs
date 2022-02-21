@@ -42,6 +42,7 @@ public class UVPaintController : MonoBehaviour
 
         tex = new Texture2D(renderTextureTemp.width, renderTextureTemp.height, TextureFormat.RGBAFloat, false);
         Color[] colors = Enumerable.Repeat(Color.black, tex.width * tex.height).ToArray();
+        tex.wrapMode = TextureWrapMode.Clamp;
         tex.SetPixels(colors);
         tex.Apply();
         matUVPaint.SetTexture("_TexPaint", tex);
@@ -67,13 +68,12 @@ public class UVPaintController : MonoBehaviour
             param.dir = dirPaint;
             param.mask = maskPaint;
             param.strength = strengthPaint;
-            StartCoroutine(DelayedPaint(param));
+            DelayedPaint(param);
         }
     }
 
-    private IEnumerator DelayedPaint(DelayedDrawParam param)
+    private void DelayedPaint(DelayedDrawParam param)
     {
-        yield return frameEnd;
 
         CommandBuffer cmd = CommandBufferPool.Get();
         matUVPaint.SetVector("posWPainter", param.pos);

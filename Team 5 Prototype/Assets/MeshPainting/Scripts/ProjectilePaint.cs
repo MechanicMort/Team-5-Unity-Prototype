@@ -5,26 +5,39 @@ using UnityEngine.ProBuilder;
 
 public class ProjectilePaint : MonoBehaviour
 {
+    public float team;
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 mask = new Vector3(0, 0, 0); //: new Vector3(0, 1, 0);
 
-        RaycastHit hit;
+        RaycastHit forwardHit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
+        var colliders = Physics.OverlapSphere(transform.position, 1.5f);
+        if (colliders.Length>0)
+        //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out forwardHit, 1))
         {
-            Vector3 dir = transform.TransformDirection(Vector3.down).normalized;
-            var paintController = hit.transform.GetComponent<UVPaintController>();
-            if (paintController != null)
+            foreach(var cld in colliders)
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Vector3 mask = Input.GetMouseButton(0) ? new Vector3(1, 0, 0) : new Vector3(0, 1, 0);
-                Debug.Log("Did Hit");
-                paintController.PaintOnGO(hit.point, dir, mask, 1);
+                Vector3 dir =GetComponent<Rigidbody>().velocity;
+                var paintController = cld.transform.GetComponent<UVPaintController>();
+                if (paintController != null)
+                {
+                    //    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * forwardHit.distance, Color.yellow);
+                    if (team == 10)
+                    {
+                        mask = new Vector3(1, 0, 0); //: new Vector3(0, 1, 0);
+                    }
+                    else
+                    {
+                        mask = new Vector3(0, 1, 0); //: new Vector3(0, 1, 0);
+                    }
+                    paintController.PaintOnGO(transform.position, dir, mask, 1);
+                }
             }
+            
         }
-
 
 
     }

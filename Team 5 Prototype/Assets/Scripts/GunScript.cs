@@ -56,7 +56,7 @@ public class GunScript : MonoBehaviour
 
             proj.GetComponent<DamagePlayer>().damageDelt = damage;
             proj.GetComponent<DamagePlayer>().whatTeam =gameObject.layer;
-
+            proj.GetComponent<ProjectilePaint>().team = gameObject.layer;
             Rigidbody rig = proj.GetComponent<Rigidbody>();
             proj.transform.LookAt( target);
             rig.AddForce(Vector3.MoveTowards(transform.position,target,speed) ,ForceMode.VelocityChange);
