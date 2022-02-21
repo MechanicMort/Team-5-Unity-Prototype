@@ -7238,6 +7238,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 667177643, guid: dfdbe1da03e1bc444a0402caece5d62c, type: 3}
+      propertyPath: mouseSen
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8318502092369714384, guid: dfdbe1da03e1bc444a0402caece5d62c, type: 3}
       propertyPath: m_RootOrder
       value: 2
