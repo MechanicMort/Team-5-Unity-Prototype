@@ -56,7 +56,11 @@
     <Compile Include="Assets\Scripts\SpotlightDilation.cs" />
     <Compile Include="Assets\Scripts\ClassHolder.cs" />
     <Compile Include="Assets\Scripts\PlayerUIManagement.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\WeaponPickup.cs" />
+=======
+    <Compile Include="Assets\InputSystem\PlayerInputController.cs" />
+>>>>>>> origin/NewMap
     <Compile Include="Assets\Scripts\GunScript.cs" />
     <Compile Include="Assets\Scripts\DestroyBullet.cs" />
     <Compile Include="Assets\Scripts\PlayerLook.cs" />
@@ -73,11 +77,13 @@
     <Compile Include="Assets\Scripts\ExplosiveScript.cs" />
     <Compile Include="Assets\Scripts\CrossHair.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\UVPainter.cs" />
+    <Compile Include="Assets\Scripts\GravityLifts.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\UVPaintController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshPainting\Shaders\PaintOnUV.shader" />
+    <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
