@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Movement")]
     public Rigidbody rb;
     public float moveSpeed ;
+    public float squidMultiplier ;
     public float jumpForce;
     public bool isGrounded = true;
     public GameObject origin;
@@ -83,24 +84,42 @@ public class PlayerController : MonoBehaviour
     private void getColour()
     {
 
-        if (Input.GetKey(KeyCode.Mouse1))
+        RaycastHit raycastHit;
+            
+        if (Physics.Raycast(transform.position, -Vector3.up, out raycastHit))
         {
-            RaycastHit raycastHit;
-            
-            if (Physics.Raycast(transform.position, -Vector3.up, out raycastHit))
+            Renderer renderer = raycastHit.collider.GetComponent<MeshRenderer>();
+            Texture2D texture2D = renderer.material.GetTexture("_TexMask") as Texture2D;
+            Vector2 pCoord = raycastHit.textureCoord2;
+            pCoord.x *= texture2D.width;
+            pCoord.y *= texture2D.height;
+            Color color = texture2D.GetPixel(Mathf.FloorToInt(pCoord.x ), Mathf.FloorToInt(pCoord.y));
+            debugColour.color = color;
+            if (Input.GetKey(KeyCode.LeftShift) && color.r >= 0.8f && gameObject.layer == 10)
             {
-                Renderer renderer = raycastHit.collider.GetComponent<MeshRenderer>();
-                Texture2D texture2D = renderer.material.GetTexture("_TexMask") as Texture2D;
-                Vector2 pCoord = raycastHit.textureCoord2;
-                print(pCoord);
-                pCoord.x *= texture2D.width;
-                pCoord.y *= texture2D.height;
-                Vector2 tiling = renderer.material.mainTextureScale;
-                Color color = texture2D.GetPixel(Mathf.FloorToInt(pCoord.x ), Mathf.FloorToInt(pCoord.y));
-                debugColour.color = color;
+                print("squid");
+                squidMultiplier = 2f;
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.25f, 0.25f, 1.25f), 0.05f);
+                thisGun.isSquid = true;
+                thisGun.Reload();
             }
-            
-        }
+            else if (Input.GetKey(KeyCode.LeftShift) && color.g >= 0.8f && gameObject.layer == 11)
+            {
+                print("squid");
+                squidMultiplier = 2f;
+
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.25f, 0.25f, 1.25f), 0.05f);
+                thisGun.isSquid = true;
+                thisGun.Reload();
+            }
+            else
+            {
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1.25f, 2f, 1.25f), 0.05f);
+                squidMultiplier = 1f;
+                thisGun.isSquid = false;
+            }
+        }      
+        
     }
     public void ApplyWeaponStats()
     {
@@ -110,6 +129,8 @@ public class PlayerController : MonoBehaviour
         thisGun.spotLight.spotAngle = heldWeapon.accuracy;
         thisGun.speed = heldWeapon.pelletSpeed;
         thisGun.shots = heldWeapon.pelletCount;
+        thisGun.accuracy = heldWeapon.accuracy;
+        thisGun.recoilAmount = heldWeapon.recoilAmount;
         
     }
     public void ApplyClass()
@@ -133,8 +154,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) { moveSpeed = 24f; }
         else { moveSpeed = 12f; }
 
-        float x = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        float y = Input.GetAxisRaw("Vertical") * moveSpeed;
+        float x = Input.GetAxisRaw("Horizontal") * moveSpeed * squidMultiplier;
+        float y = Input.GetAxisRaw("Vertical") * moveSpeed * squidMultiplier;
 
         Vector3 movePos = transform.right * x + transform.forward * y ;
         Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);

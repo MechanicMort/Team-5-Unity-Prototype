@@ -9,13 +9,16 @@ public class GunScript : MonoBehaviour
     public float magazineSize;
     public Transform origin;
     public GameObject bullet;
-    public float speed = 50f;
+    public float speed;
     public float shots;
     public Light spotLight;
     public Text ammoCountText;
     public float fireRate;
     public float fireRateCounter;
     public float damage;
+    public float accuracy;
+    public float recoilAmount;
+    public bool isSquid;
 
     private void Start()
     {
@@ -27,7 +30,8 @@ public class GunScript : MonoBehaviour
     {
 
         ammoCountText.text = ammoCount + "/" + magazineSize;
-        if (Input.GetButton("Fire1") && fireRateCounter <= 0 && ammoCount !=0)
+        spotLight.GetComponent<SpotlightDilation>().accuracy = accuracy;
+        if (Input.GetButton("Fire1") && fireRateCounter <= 0 && ammoCount !=0 && !isSquid)
         {
             ammoCount -= 1;
             fireRateCounter = fireRate;
@@ -42,6 +46,11 @@ public class GunScript : MonoBehaviour
         StartCoroutine(fireRateController());
     }
 
+    public  void Reload()
+    {
+        ammoCount = magazineSize;
+
+    }
     void ShootingBullet()
     {
         for (int i = 0; i < shots; i++)
@@ -56,9 +65,10 @@ public class GunScript : MonoBehaviour
             proj.GetComponent<DamagePlayer>().damageDelt = damage;
             proj.GetComponent<DamagePlayer>().whatTeam =gameObject.layer;
             proj.GetComponent<ProjectilePaint>().team = gameObject.layer;
+            proj.transform.LookAt(target);
             Rigidbody rig = proj.GetComponent<Rigidbody>();
-            proj.transform.LookAt( target);
-            rig.AddForce(Vector3.MoveTowards(transform.position,target,speed) ,ForceMode.VelocityChange);
+            rig.AddForce(proj.transform.forward * speed,ForceMode.VelocityChange);
+            spotLight.GetComponent<SpotlightDilation>().Recoil(recoilAmount);
 
         }
         

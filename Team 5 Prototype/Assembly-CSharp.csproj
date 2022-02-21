@@ -53,7 +53,10 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\SpotlightDilation.cs" />
+    <Compile Include="Assets\Scripts\ClassHolder.cs" />
     <Compile Include="Assets\Scripts\PlayerUIManagement.cs" />
+    <Compile Include="Assets\Scripts\WeaponPickup.cs" />
     <Compile Include="Assets\Scripts\GunScript.cs" />
     <Compile Include="Assets\Scripts\DestroyBullet.cs" />
     <Compile Include="Assets\Scripts\PlayerLook.cs" />
@@ -61,6 +64,7 @@
     <Compile Include="Assets\MeshPainting\Scripts\UVPaintManager.cs" />
     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\UVPaintShow.cs" />
+    <Compile Include="Assets\Scripts\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\InputSystemTest.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\ProjectilePaint.cs" />
@@ -71,7 +75,6 @@
     <Compile Include="Assets\MeshPainting\Scripts\UVPainter.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\UVPaintController.cs" />
-    <Compile Include="Assets\Scripts\SpotlightDilation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshPainting\Shaders\PaintOnUV.shader" />

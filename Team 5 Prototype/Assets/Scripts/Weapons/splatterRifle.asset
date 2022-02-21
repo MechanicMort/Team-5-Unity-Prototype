@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baacb8152beba224bb5860cf7d190787, type: 3}
   m_Name: splatterRifle
   m_EditorClassIdentifier: 
-  fireRate: 0.3
+  fireRate: 0.1
   accuracy: 10
   zoomLevel: 1.5
   pelletCount: 2
-  pelletSpeed: 40
+  pelletSpeed: 70
   magSize: 30
   damage: 25
   recoilAmount: 2
