@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 public class PlayerInputController : MonoBehaviour
 {
     //private CharacterController controller;
-   
+    public Camera camera;
+    public Transform player;
+
     private Rigidbody rb;
     public bool isGrounded = true;
     int layerMask = 1 << 8;
@@ -18,7 +20,10 @@ public class PlayerInputController : MonoBehaviour
     private float jumpForce = 10f;
 
     private Vector2 movementInput = Vector2.zero;
-    private bool jumped = false;
+
+    private Vector2 cameraInput = Vector2.zero;
+    private float mX, mY;
+    public float mouseSen = 1f;
 
     private void Start()
     {
@@ -35,15 +40,9 @@ public class PlayerInputController : MonoBehaviour
         Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
         rb.velocity = newMovePos;
 
-        if (jumped && isGrounded)
-        {
-            rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
-            isGrounded = false;
-        }
+        
 
         CheckForGrounded();
-
-
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -53,11 +52,31 @@ public class PlayerInputController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        jumped = context.ReadValue<bool>();
-        jumped = context.action.triggered;
+        if (isGrounded)
+        {
+            Debug.Log("Jumped");
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            isGrounded = false;
+        }
+
     }
 
-    void CheckForGrounded()
+    public void OnCamera(InputAction.CallbackContext context)
+    {
+        cameraInput = context.ReadValue<Vector2>();
+
+        mX += cameraInput.x * mouseSen;
+        mY -= cameraInput.y * mouseSen;
+        mY = Mathf.Clamp(mY, -80, 80);
+        camera.transform.rotation = Quaternion.Euler(mY, mX, 0);
+        player.transform.rotation = Quaternion.Euler(0, mX, 0);
+
+
+
+    }
+
+
+    private void CheckForGrounded()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2.5f, layerMask))
