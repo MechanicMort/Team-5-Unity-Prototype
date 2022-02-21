@@ -16,7 +16,6 @@ public class GunScript : MonoBehaviour
     public float fireRate;
     public float fireRateCounter;
     public float damage;
-    public Camera camera;
 
     private void Start()
     {
