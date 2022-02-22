@@ -27,7 +27,7 @@ public class GunScript : MonoBehaviour
     private void Update()
     {
 
-        ammoCountText.text = ammoCount + "/" + magazineSize;
+        //ammoCountText.text = ammoCount + "/" + magazineSize;
         if (Input.GetButton("Fire1") && fireRateCounter <= 0 && ammoCount !=0)
         {
             ammoCount -= 1;
