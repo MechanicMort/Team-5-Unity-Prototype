@@ -22,7 +22,11 @@ MonoBehaviour:
   m_Title: Game
   m_RootView: {fileID: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 875, y: 542}
+=======
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> origin/NewMap
 =======
   m_MinSize: {x: 875, y: 300}
 >>>>>>> origin/NewMap
@@ -73,7 +77,11 @@ MonoBehaviour:
     y: 0
     width: 1920
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: 1157
+=======
+    height: 1117
+>>>>>>> origin/NewMap
 =======
     height: 1117
 >>>>>>> origin/NewMap
@@ -150,17 +158,23 @@ MonoBehaviour:
     y: 30
     width: 1920
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: 1107
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
   controlID: 82
 =======
+=======
+>>>>>>> origin/NewMap
     height: 1067
   m_MinSize: {x: 677, y: 342}
   m_MaxSize: {x: 12002, y: 8042}
   vertical: 0
   controlID: 72
+<<<<<<< HEAD
+>>>>>>> origin/NewMap
+=======
 >>>>>>> origin/NewMap
 --- !u!114 &7
 MonoBehaviour:
@@ -182,6 +196,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1346
     height: 1107
   m_MinSize: {x: 605, y: 492}
@@ -189,12 +204,17 @@ MonoBehaviour:
   vertical: 1
   controlID: 83
 =======
+=======
+>>>>>>> origin/NewMap
     width: 1644
     height: 1067
   m_MinSize: {x: 402, y: 342}
   m_MaxSize: {x: 8002, y: 8042}
   vertical: 1
   controlID: 73
+<<<<<<< HEAD
+>>>>>>> origin/NewMap
+=======
 >>>>>>> origin/NewMap
 --- !u!114 &8
 MonoBehaviour:
@@ -216,12 +236,21 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1346
     height: 823
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
   controlID: 84
+=======
+    width: 1644
+    height: 796
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
+  vertical: 0
+  controlID: 74
+>>>>>>> origin/NewMap
 =======
     width: 1644
     height: 796
@@ -248,12 +277,15 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 201
     height: 823
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
 =======
+=======
+>>>>>>> origin/NewMap
     width: 297
     height: 796
   m_MinSize: {x: 200, y: 200}
@@ -282,8 +314,13 @@ MonoBehaviour:
     x: 297
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 511
     height: 823
+=======
+    width: 1347
+    height: 796
+>>>>>>> origin/NewMap
 =======
     width: 1347
     height: 796
@@ -293,6 +330,7 @@ MonoBehaviour:
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
+<<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 18}
   - {fileID: 14}
@@ -326,6 +364,10 @@ MonoBehaviour:
   - {fileID: 14}
   - {fileID: 13}
 >>>>>>> origin/NewMap
+=======
+  - {fileID: 14}
+  - {fileID: 13}
+>>>>>>> origin/NewMap
   m_Selected: 0
   m_LastSelected: 2
 --- !u!114 &11
@@ -345,12 +387,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 823
     width: 1346
     height: 284
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
 =======
+=======
+>>>>>>> origin/NewMap
     y: 796
     width: 1644
     height: 271
@@ -369,6 +414,9 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &12
+<<<<<<< HEAD
+>>>>>>> origin/NewMap
+=======
 >>>>>>> origin/NewMap
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -385,6 +433,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1346
     y: 0
     width: 574
@@ -395,6 +444,10 @@ MonoBehaviour:
 =======
     x: 1644
     y: 0
+=======
+    x: 1644
+    y: 0
+>>>>>>> origin/NewMap
     width: 276
     height: 1067
   m_MinSize: {x: 275, y: 100}
@@ -1940,10 +1993,17 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 712
     y: 73
     width: 632
     height: 802
+=======
+    x: 297
+    y: 73
+    width: 1345
+    height: 775
+>>>>>>> origin/NewMap
 =======
     x: 297
     y: 73
@@ -1994,15 +2054,21 @@ MonoBehaviour:
       x: 0
       y: 21
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 632
       height: 781
     m_Scale: {x: 0.32916668, y: 0.32916668}
     m_Translation: {x: 315.99997, y: 390.5}
 =======
+=======
+>>>>>>> origin/NewMap
       width: 1345
       height: 754
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 672.77, y: 377.4116}
+<<<<<<< HEAD
+>>>>>>> origin/NewMap
+=======
 >>>>>>> origin/NewMap
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -2011,6 +2077,7 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
       x: -959.9999
       y: -1186.3291
       width: 1919.9999
@@ -2018,6 +2085,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.32916668
   m_LastWindowPixelSize: {x: 632, y: 802}
+=======
+      x: -672.77
+      y: -377.4116
+      width: 1345
+      height: 754
+    m_MinimalGUI: 1
+  m_defaultScale: 0.69814813
+  m_LastWindowPixelSize: {x: 1345, y: 775}
+>>>>>>> origin/NewMap
 =======
       x: -672.77
       y: -377.4116
@@ -2055,8 +2131,13 @@ MonoBehaviour:
     x: 0
     y: 73
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 200
     height: 802
+=======
+    width: 296
+    height: 775
+>>>>>>> origin/NewMap
 =======
     width: 296
     height: 775
@@ -2066,9 +2147,15 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: c0230000
       m_LastClickedID: 0
       m_ExpandedIDs: 78c6feff64cffeff70f3ffff8ef3ffff66faffff70faffffb0faffffbcfaffffeefaffff0a3002002a300200
+=======
+      m_SelectedIDs: 56faffff
+      m_LastClickedID: -1450
+      m_ExpandedIDs: 68fbffff
+>>>>>>> origin/NewMap
 =======
       m_SelectedIDs: 56faffff
       m_LastClickedID: -1450
@@ -2120,8 +2207,13 @@ MonoBehaviour:
     x: 297
     y: 73
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 509
     height: 802
+=======
+    width: 1345
+    height: 775
+>>>>>>> origin/NewMap
 =======
     width: 1345
     height: 775
@@ -2139,9 +2231,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 2.2963257, y: 4.840004, z: -2.6490479}
     speed: 2
     m_Value: {x: 2.2963257, y: 4.840004, z: -2.6490479}
+=======
+    m_Target: {x: 614.3716, y: -445.0015, z: -357.26126}
+    speed: 2
+    m_Value: {x: 614.3716, y: -445.0015, z: -357.26126}
+>>>>>>> origin/NewMap
 =======
     m_Target: {x: 614.3716, y: -445.0015, z: -357.26126}
     speed: 2
@@ -2194,6 +2292,7 @@ MonoBehaviour:
     m_gridOpacity: 0.5
   m_Rotation:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -0.20342441, y: 0.65257466, z: -0.18829542, w: -0.7055103}
     speed: 2
     m_Value: {x: -0.20338017, y: 0.65243274, z: -0.18825446, w: -0.70535684}
@@ -2201,6 +2300,15 @@ MonoBehaviour:
     m_Target: 158.36833
     speed: 2
     m_Value: 158.36833
+=======
+    m_Target: {x: 0.13859278, y: 0.83577996, z: -0.24672736, w: 0.47121638}
+    speed: 2
+    m_Value: {x: 0.13854738, y: 0.83550614, z: -0.24664654, w: 0.471062}
+  m_Size:
+    m_Target: 459.32123
+    speed: 2
+    m_Value: 459.32123
+>>>>>>> origin/NewMap
 =======
     m_Target: {x: 0.13859278, y: 0.83577996, z: -0.24672736, w: 0.47121638}
     speed: 2
@@ -2255,15 +2363,21 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 268
     y: 72.66667
     width: 1322
     height: 979
 =======
+=======
+>>>>>>> origin/NewMap
     x: 201
     y: 73
     width: 1141
     height: 771
+<<<<<<< HEAD
+>>>>>>> origin/NewMap
+=======
 >>>>>>> origin/NewMap
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &19
@@ -2288,9 +2402,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 896
     width: 1345
     height: 263
+=======
+    y: 869
+    width: 1643
+    height: 250
+>>>>>>> origin/NewMap
 =======
     y: 869
     width: 1643
@@ -2317,6 +2437,7 @@ MonoBehaviour:
   m_StartGridSize: 71
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets/Scripts/Weapons
   m_LastFoldersGridSize: -1
   m_LastProjectPath: H:\Desktop\Team-5-Unity-Prototype\Team 5 Prototype
@@ -2334,10 +2455,21 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+=======
+  - Assets/Scripts
+  m_LastFoldersGridSize: 71
+  m_LastProjectPath: C:\Development\Team-5-Unity-Prototype\Team 5 Prototype
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+>>>>>>> origin/NewMap
     scrollPos: {x: 0, y: 314}
     m_SelectedIDs: 6c680000
     m_LastClickedID: 26732
     m_ExpandedIDs: 000000007c6500007e65000080650000826500008465000086650000886500008a6500008c650000
+<<<<<<< HEAD
+>>>>>>> origin/NewMap
+=======
 >>>>>>> origin/NewMap
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2367,7 +2499,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000003e62000040620000426200004462000046620000486200004a6200004c6200004e6200005062000052620000
+=======
+    m_ExpandedIDs: 000000007c6500007e65000080650000826500008465000086650000886500008a6500008c650000
+>>>>>>> origin/NewMap
 =======
     m_ExpandedIDs: 000000007c6500007e65000080650000826500008465000086650000886500008a6500008c650000
 >>>>>>> origin/NewMap
@@ -2396,15 +2532,21 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000066ae010030ed000000000000745a0000
 =======
+=======
+>>>>>>> origin/NewMap
     m_SelectedInstanceIDs: 32580000
     m_LastClickedInstanceID: 22578
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000066ae010030ed000000000000c2650000
+<<<<<<< HEAD
+>>>>>>> origin/NewMap
+=======
 >>>>>>> origin/NewMap
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2455,9 +2597,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 896
     width: 1345
     height: 263
+=======
+    y: 869
+    width: 1643
+    height: 250
+>>>>>>> origin/NewMap
 =======
     y: 869
     width: 1643
@@ -2485,10 +2633,17 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1346
     y: 73
     width: 573
     height: 1086
+=======
+    x: 1644
+    y: 73
+    width: 275
+    height: 1046
+>>>>>>> origin/NewMap
 =======
     x: 1644
     y: 73
@@ -2529,10 +2684,17 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1346
     y: 73
     width: 573
     height: 1086
+=======
+    x: 1423
+    y: 73
+    width: 496
+    height: 1046
+>>>>>>> origin/NewMap
 =======
     x: 1423
     y: 73
