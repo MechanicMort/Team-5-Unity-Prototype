@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TexPaintBump:
-        m_Texture: {fileID: 2800000, guid: 7e822c763c1db1540a7d1b1cd43af9f7, type: 3}
+        m_Texture: {fileID: 2800000, guid: f143b945f1ea62a4a940860e1e1b0749, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:

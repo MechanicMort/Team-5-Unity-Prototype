@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376459844}
   - component: {fileID: 1376459845}
+  - component: {fileID: 1857885271}
   m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
@@ -93,6 +94,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1857885271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376459843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e46f064048c15f4fb026bd3f89c96c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accuracy: 0
 --- !u!1 &8318502091064045461
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +297,6 @@ GameObject:
   - component: {fileID: 8318502092369714389}
   - component: {fileID: 8318502092369714388}
   - component: {fileID: 699467662}
-  - component: {fileID: 699467664}
   - component: {fileID: 2002197948861842748}
   - component: {fileID: 699467668}
   - component: {fileID: 667177643}
@@ -413,40 +426,9 @@ MonoBehaviour:
   fireRate: 0.1
   fireRateCounter: 0
   damage: 10
-  camera: {fileID: 0}
---- !u!114 &699467664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8318502092369714394}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b843d6a263d8e6f45bcc520cb6353d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerShieldRegen: 0
-  playerHealthRegen: 0
-  playerRegenTimer: 0
-  regenTimerDone: 0
-  playerOverHealth: 0
-  playerOverShield: 0
-  playerHealth: 100
-  playerHealthMax: 100
-  playerShield: 50
-  playerShieldMax: 50
-  abilityOne: {fileID: 11400000, guid: dc3973258d1250748b06a415820ab7b9, type: 2}
-  abilityOneCoolDown: 0
-  abilityTwo: {fileID: 11400000, guid: 07be32dc89b2a9e44837e2a0932e3c4d, type: 2}
-  abilityTwoCoolDown: 0
-  Ultimate: {fileID: 11400000, guid: 6c254afbf8590d4429cb4b5146777fcc, type: 2}
-  ultimateCoolDown: 0
-  rb: {fileID: 0}
-  moveSpeed: 12
-  jumpForce: 10
-  isGrounded: 1
-  origin: {fileID: 0}
+  accuracy: 0
+  recoilAmount: 0
+  isSquid: 0
 --- !u!114 &2002197948861842748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +514,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dd681c88-4912-449b-af67-898c0aabaa11
     m_ActionName: Player/Camera[/Mouse/delta,/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 667177643}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1c084362-cfd1-4a35-93b7-45be94375e50
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -551,10 +549,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 8318502092494901915}
   player: {fileID: 8318502092369714384}
+  mouseSen: 0.5
+  playerShieldRegen: 0
+  playerHealthRegen: 0
+  playerRegenTimer: 0
+  regenTimerDone: 0
+  playerOverHealth: 0
+  playerOverShield: 0
+  playerHealth: 0
+  playerHealthMax: 0
+  playerShield: 0
+  playerShieldMax: 0
+  heldWeapon: {fileID: 11400000, guid: 3438acb6c7b560d4b967c8ab32757781, type: 2}
+  currentClass: {fileID: 11400000, guid: aa36ca4ffde5f4b4fac3676fde15731c, type: 2}
+  abilityOne: {fileID: 0}
+  abilityOneCoolDown: 0
+  abilityTwo: {fileID: 0}
+  abilityTwoCoolDown: 0
+  Ultimate: {fileID: 0}
+  ultimateCoolDown: 0
   isGrounded: 1
   moveSpeed: 12
   jumpForce: 25
-  mouseSen: 1
 --- !u!1 &8318502092494901912
 GameObject:
   m_ObjectHideFlags: 0

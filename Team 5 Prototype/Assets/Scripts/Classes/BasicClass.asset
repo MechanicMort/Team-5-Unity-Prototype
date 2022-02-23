@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ebdf988b9368244852e8629758f252, type: 3}
   m_Name: BasicClass
   m_EditorClassIdentifier: 
-  ShieldRegen: 0
+  ShieldRegen: 0.1
   HealthRegen: 0
   HealthMax: 100
   ShieldMax: 50
   moveSpeed: 12
   jumpForce: 10
-  ability1: {fileID: 0}
-  ability2: {fileID: 0}
-  Ultimate: {fileID: 0}
+  ability1: {fileID: 11400000, guid: dc3973258d1250748b06a415820ab7b9, type: 2}
+  ability2: {fileID: 11400000, guid: 07be32dc89b2a9e44837e2a0932e3c4d, type: 2}
+  Ultimate: {fileID: 11400000, guid: 6c254afbf8590d4429cb4b5146777fcc, type: 2}

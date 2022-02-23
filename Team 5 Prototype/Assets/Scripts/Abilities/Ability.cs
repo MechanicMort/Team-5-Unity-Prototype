@@ -18,24 +18,55 @@ public class Ability : ScriptableObject
 
    public  void DoAbility()
     {
+        Debug.Log(abilityOwner.name);
         switch (abilityName)
         {
             case "Yes":
                 Debug.Log("Yes");
-                abilityOwner.GetComponent<PlayerController>().Heal(50);
+                abilityOwner.GetComponent<PlayerInputController>().Heal(50);
                 break;
             case "No":
                 Debug.Log("NO");
-                abilityOwner.GetComponent<PlayerController>().TakeDamage(30);
+                abilityOwner.GetComponent<PlayerInputController>().TakeDamage(30);
                 break;
             case "UltimateTest":
                 Debug.Log("UltimateTest");
-                abilityOwner.GetComponent<PlayerController>().Heal(700);
+                abilityOwner.GetComponent<PlayerInputController>().Heal(700);
                 break;
+            case "Dash":
+                Debug.Log("Dash");
+                abilityOwner.GetComponent<PlayerInputController>().abilitySpeed = 10f;
+                abilityOwner.GetComponent<PlayerInputController>().RestoreValue(0.1f);
+                break;
+            case "DoubleJump":
+                Debug.Log("Double Jump");
+                break;
+            case "OverDrive":
+                Debug.Log("OverDrive");
+                abilityOwner.GetComponent<PlayerInputController>().TakeDamage(30);
+                abilityOwner.GetComponent<PlayerInputController>().fireRateMulti = 1.6f;
+                abilityOwner.GetComponent<PlayerInputController>().abilitySpeed = 0.7f;
+                abilityOwner.GetComponent<PlayerInputController>().RestoreValue(3f);
+                break;
+            case "OverShield":
+                Debug.Log("OverShield");
+                abilityOwner.GetComponent<PlayerInputController>().ShieldRestore(100);
+                break;
+            case "ShieldCore":
+                Debug.Log("ShieldCore");
+                abilityOwner.GetComponent<PlayerInputController>().ShieldRestore(200);
+                abilityOwner.GetComponent<PlayerInputController>().fireRateMulti = 3f;
+                abilityOwner.GetComponent<PlayerInputController>().abilitySpeed = 0.0f;
+                abilityOwner.GetComponent<PlayerInputController>().RestoreValue(2f);
+                break;
+
             default:
                 Debug.Log("Error");
                 break;
         }
     }
+
+
 }
+
 

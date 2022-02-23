@@ -19,7 +19,8 @@ public class PlayerUIManagement : MonoBehaviour
     public Image abilityOneIcon;
     public Image abilityTwoIcon;
     public Image ultimateIcon;
-    private PlayerController player;
+    private PlayerInputController player;
+    public GameObject playerGO;
     // Start is called before the first frame update
 
 
@@ -40,13 +41,19 @@ public class PlayerUIManagement : MonoBehaviour
         botStartPos = botCross.GetComponent<RectTransform>().position;
         topStartPos = topCross.GetComponent<RectTransform>().position;
 
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player= playerGO.GetComponent<PlayerInputController>();
+        StartCoroutine(waitForStart());
+
+    }
+
+    private IEnumerator waitForStart()
+    {
+        yield return new WaitForSeconds(0.1f);
         abilityOneIcon.sprite = player.abilityOne.abilitySprite;
+
         abilityTwoIcon.sprite = player.abilityTwo.abilitySprite;
         ultimateIcon.sprite = player.Ultimate.abilitySprite;
     }
-
-
     // Update is called once per frame
     void Update()
     {

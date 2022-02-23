@@ -14,6 +14,7 @@ public class GunScript : MonoBehaviour
     public Light spotLight;
     public Text ammoCountText;
     public float fireRate;
+    public float fireRateMod = 1.0f;
     public float fireRateCounter;
     public float damage;
     public float accuracy;
@@ -28,15 +29,9 @@ public class GunScript : MonoBehaviour
     }
     private void Update()
     {
-
-        ammoCountText.text = ammoCount + "/" + magazineSize;
+        //ammoCountText.text = ammoCount + "/" + magazineSize;
         spotLight.GetComponent<SpotlightDilation>().accuracy = accuracy;
-        if (Input.GetButton("Fire1") && fireRateCounter <= 0 && ammoCount !=0 && !isSquid)
-        {
-            ammoCount -= 1;
-            fireRateCounter = fireRate;
-            ShootingBullet();
-        }
+
     }
 
     private IEnumerator fireRateController()
@@ -51,26 +46,33 @@ public class GunScript : MonoBehaviour
         ammoCount = magazineSize;
 
     }
-    void ShootingBullet()
+    public void ShootBullet()
     {
-        for (int i = 0; i < shots; i++)
+        if (fireRateCounter <= 0 && ammoCount != 0 && isSquid == false)
         {
-            float radius = Mathf.Tan(Mathf.Deg2Rad * spotLight.spotAngle / 2) * spotLight.range;
-            Vector2 circle = Random.insideUnitCircle * radius;
-            Vector3 target = spotLight.transform.position + spotLight.transform.forward * spotLight.range + spotLight.transform.rotation * new Vector3(circle.x, circle.y);
+            ammoCount -= 1;
+            fireRateCounter = fireRate / fireRateMod;
+            print(fireRateMod);
+            for (int i = 0; i < shots; i++)
+            {
+                float radius = Mathf.Tan(Mathf.Deg2Rad * spotLight.spotAngle / 2) * spotLight.range;
+                Vector2 circle = Random.insideUnitCircle * radius;
+                Vector3 target = spotLight.transform.position + spotLight.transform.forward * spotLight.range + spotLight.transform.rotation * new Vector3(circle.x, circle.y);
 
-            
-            GameObject proj = Instantiate(bullet, origin.position, bullet.transform.rotation);
 
-            proj.GetComponent<DamagePlayer>().damageDelt = damage;
-            proj.GetComponent<DamagePlayer>().whatTeam =gameObject.layer;
-            proj.GetComponent<ProjectilePaint>().team = gameObject.layer;
-            proj.transform.LookAt(target);
-            Rigidbody rig = proj.GetComponent<Rigidbody>();
-            rig.AddForce(proj.transform.forward * speed,ForceMode.VelocityChange);
-            spotLight.GetComponent<SpotlightDilation>().Recoil(recoilAmount);
+                GameObject proj = Instantiate(bullet, origin.position, bullet.transform.rotation);
 
+                proj.GetComponent<DamagePlayer>().damageDelt = damage;
+                proj.GetComponent<DamagePlayer>().whatTeam = gameObject.layer;
+                proj.GetComponent<ProjectilePaint>().team = gameObject.layer;
+                proj.transform.LookAt(target);
+                Rigidbody rig = proj.GetComponent<Rigidbody>();
+                rig.AddForce(proj.transform.forward * speed, ForceMode.VelocityChange);
+                spotLight.GetComponent<SpotlightDilation>().Recoil(recoilAmount);
+
+            }
         }
+        
         
     }
 }

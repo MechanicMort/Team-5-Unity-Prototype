@@ -53,6 +53,51 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c084362-cfd1-4a35-93b7-45be94375e50"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SquidMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea2735de-3dd4-460c-9561-d1604b43ff94"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability 1"",
+                    ""type"": ""Button"",
+                    ""id"": ""aeb8d3b4-4473-4a1f-93ae-05a047cf5824"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability 2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b8e9ac46-dbd3-4cf6-b876-59dab9b4053f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ultimate"",
+                    ""type"": ""Button"",
+                    ""id"": ""f2bc5268-61ce-4107-969c-6e72b5ab1dc8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +210,72 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2da6d8b9-0c68-4764-9bb2-efc571e43426"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c77773b8-8b16-4d07-b342-41964c7e94dc"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8063cd2b-f4bd-4ed3-a97c-0cf9e506bc1a"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SquidMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d1dd00c-aaae-4ad8-b608-660503fbf801"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11c52e3b-7825-4e74-ad0e-f9eaff0bc8ee"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ability 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef5f77b4-3d49-41c4-a892-2532dacecc02"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ultimate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -204,6 +315,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_SquidMode = m_Player.FindAction("SquidMode", throwIfNotFound: true);
+        m_Player_Ability1 = m_Player.FindAction("Ability 1", throwIfNotFound: true);
+        m_Player_Ability2 = m_Player.FindAction("Ability 2", throwIfNotFound: true);
+        m_Player_Ultimate = m_Player.FindAction("Ultimate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,6 +382,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Camera;
+    private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_SquidMode;
+    private readonly InputAction m_Player_Ability1;
+    private readonly InputAction m_Player_Ability2;
+    private readonly InputAction m_Player_Ultimate;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -273,6 +394,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Camera => m_Wrapper.m_Player_Camera;
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @SquidMode => m_Wrapper.m_Player_SquidMode;
+        public InputAction @Ability1 => m_Wrapper.m_Player_Ability1;
+        public InputAction @Ability2 => m_Wrapper.m_Player_Ability2;
+        public InputAction @Ultimate => m_Wrapper.m_Player_Ultimate;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -291,6 +417,21 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Camera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
+                @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @SquidMode.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSquidMode;
+                @SquidMode.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSquidMode;
+                @SquidMode.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSquidMode;
+                @Ability1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility2;
+                @Ability2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility2;
+                @Ability2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility2;
+                @Ultimate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUltimate;
+                @Ultimate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUltimate;
+                @Ultimate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUltimate;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -304,6 +445,21 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Camera.started += instance.OnCamera;
                 @Camera.performed += instance.OnCamera;
                 @Camera.canceled += instance.OnCamera;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
+                @SquidMode.started += instance.OnSquidMode;
+                @SquidMode.performed += instance.OnSquidMode;
+                @SquidMode.canceled += instance.OnSquidMode;
+                @Ability1.started += instance.OnAbility1;
+                @Ability1.performed += instance.OnAbility1;
+                @Ability1.canceled += instance.OnAbility1;
+                @Ability2.started += instance.OnAbility2;
+                @Ability2.performed += instance.OnAbility2;
+                @Ability2.canceled += instance.OnAbility2;
+                @Ultimate.started += instance.OnUltimate;
+                @Ultimate.performed += instance.OnUltimate;
+                @Ultimate.canceled += instance.OnUltimate;
             }
         }
     }
@@ -331,5 +487,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+        void OnSquidMode(InputAction.CallbackContext context);
+        void OnAbility1(InputAction.CallbackContext context);
+        void OnAbility2(InputAction.CallbackContext context);
+        void OnUltimate(InputAction.CallbackContext context);
     }
 }
