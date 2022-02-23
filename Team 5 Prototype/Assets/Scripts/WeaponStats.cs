@@ -17,5 +17,6 @@ using UnityEngine;
         public float recoilAmount;
         public string weaponName;
         public Mesh weaponMesh;
+        public AudioClip weaponNoise;
     }
 
