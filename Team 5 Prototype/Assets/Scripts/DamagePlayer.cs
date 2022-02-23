@@ -19,7 +19,7 @@ public class DamagePlayer : MonoBehaviour
         {
             if (collision.gameObject.layer != whatTeam )
             {
-                collision.transform.GetComponent<PlayerController>().TakeDamage(damageDelt);
+                collision.transform.GetComponent<PlayerInputController>().TakeDamage(damageDelt);
             }
         }
     }
@@ -29,7 +29,7 @@ public class DamagePlayer : MonoBehaviour
         {
             if (collision.gameObject.layer != whatTeam)
             {
-                collision.transform.GetComponent<PlayerController>().TakeDamage(damageDelt);
+                collision.transform.GetComponent<PlayerInputController>().TakeDamage(damageDelt);
             }
         }
     }

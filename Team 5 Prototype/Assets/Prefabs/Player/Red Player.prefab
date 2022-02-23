@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376459844}
   - component: {fileID: 1376459845}
-  - component: {fileID: 1996687034}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,8 +45,8 @@ Light:
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 0
   m_Range: 130.62
-  m_SpotAngle: 16.287535
-  m_InnerSpotAngle: 15.473158
+  m_SpotAngle: 4.071884
+  m_InnerSpotAngle: 4.071884
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -94,18 +93,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1996687034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376459843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e46f064048c15f4fb026bd3f89c96c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8318502091064045461
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +105,7 @@ GameObject:
   - component: {fileID: 8318502091064045457}
   - component: {fileID: 8318502091064045456}
   - component: {fileID: 8318502091064045463}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +199,7 @@ GameObject:
   - component: {fileID: 8318502091805469917}
   - component: {fileID: 8318502091805469916}
   - component: {fileID: 8318502091805469859}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,14 +286,9 @@ GameObject:
   - component: {fileID: 699467664}
   - component: {fileID: 2002197948861842748}
   - component: {fileID: 699467668}
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Player.prefab
-  m_Layer: 11
-  m_Name: Player
-=======
   - component: {fileID: 667177643}
   m_Layer: 10
   m_Name: Red Player
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,11 +402,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5f0b80b905efc4cb2e52fd93212728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCount: 10000
-  magazineSize: 10000000
+  ammoCount: 30
+  magazineSize: 30
   origin: {fileID: 8318502091805469917}
   bullet: {fileID: 4204093134777823205, guid: 430fc7ca31cf2dc4d855b8be0a859bf4, type: 3}
-  speed: 40
+  speed: 90
   shots: 3
   spotLight: {fileID: 1376459845}
   ammoCountText: {fileID: 0}
@@ -568,7 +550,7 @@ GameObject:
   - component: {fileID: 8318502092494901913}
   - component: {fileID: 8318502092494901909}
   - component: {fileID: 660919415}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,11 +565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092494901912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Player.prefab
-  m_LocalPosition: {x: 0.56, y: 1.6, z: -4.73}
-=======
   m_LocalPosition: {x: 0.2, y: 1.42, z: -4.73}
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1376459844}

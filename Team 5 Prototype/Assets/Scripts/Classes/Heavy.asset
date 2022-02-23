@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ebdf988b9368244852e8629758f252, type: 3}
+  m_Name: Heavy
+  m_EditorClassIdentifier: 
+  ShieldRegen: 0.3
+  HealthRegen: 0.2
+  HealthMax: 150
+  ShieldMax: 50
+  moveSpeed: 8
+  jumpForce: 12
+  ability1: {fileID: 11400000, guid: 14331b7cd92e04e4b8eec3517de71348, type: 2}
+  ability2: {fileID: 11400000, guid: f69778950087ec544826416baa65d177, type: 2}
+  Ultimate: {fileID: 11400000, guid: 6e1a6278525007e4dbbbedb9c8b22a45, type: 2}
