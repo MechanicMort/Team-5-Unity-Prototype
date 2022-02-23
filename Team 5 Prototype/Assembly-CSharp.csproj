@@ -57,11 +57,7 @@
     <Compile Include="Assets\Scripts\ClassHolder.cs" />
     <Compile Include="Assets\Scripts\PlayerUIManagement.cs" />
 <<<<<<< HEAD
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\WeaponPickup.cs" />
-=======
-    <Compile Include="Assets\InputSystem\PlayerInputController.cs" />
->>>>>>> origin/NewMap
 =======
     <Compile Include="Assets\InputSystem\PlayerInputController.cs" />
 >>>>>>> origin/NewMap

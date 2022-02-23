@@ -287,18 +287,8 @@ GameObject:
   - component: {fileID: 2002197948861842748}
   - component: {fileID: 699467668}
   - component: {fileID: 667177643}
-<<<<<<< HEAD
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
   m_Layer: 11
   m_Name: Blue Player
-=======
-  m_Layer: 10
-  m_Name: Red Player
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
-=======
-  m_Layer: 11
-  m_Name: Blue Player
->>>>>>> origin/NewMap
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,11 +338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-<<<<<<< HEAD
-  - {fileID: 2100000, guid: 640e88ddba8c1ff47a7a224d5ae98a1d, type: 2}
-=======
   - {fileID: 2100000, guid: dbfe5d07cd689104c8d6c2c9a77c6762, type: 2}
->>>>>>> origin/NewMap
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -530,10 +516,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9a506eed-dda3-40ac-97c7-7d24cc692619
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-<<<<<<< HEAD
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
-=======
->>>>>>> origin/NewMap
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 667177643}
@@ -552,13 +534,6 @@ MonoBehaviour:
     m_ActionName: Player/Camera[/Mouse/delta,/DualShock4GamepadHID/rightStick]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
-<<<<<<< HEAD
-=======
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
-=======
->>>>>>> origin/NewMap
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 8318502092494901915}
@@ -574,24 +549,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dffd5bff02e3554692430a15a1f8fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
-=======
->>>>>>> origin/NewMap
   camera: {fileID: 8318502092494901915}
   player: {fileID: 8318502092369714384}
   isGrounded: 1
   moveSpeed: 12
   jumpForce: 25
   mouseSen: 1
-<<<<<<< HEAD
-=======
-  isGrounded: 1
-  moveSpeed: 12
-  jumpForce: 25
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
-=======
->>>>>>> origin/NewMap
 --- !u!1 &8318502092494901912
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,15 +584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092494901912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
   m_LocalPosition: {x: 0, y: 0.5, z: 0.3}
-=======
-  m_LocalPosition: {x: 0.2, y: 1.42, z: -4.73}
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
-=======
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.3}
->>>>>>> origin/NewMap
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1376459844}

@@ -10,10 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376459844}
   - component: {fileID: 1376459845}
-<<<<<<< HEAD
   - component: {fileID: 1996687034}
-=======
->>>>>>> origin/NewMap
   m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
@@ -49,13 +46,8 @@ Light:
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 0
   m_Range: 130.62
-<<<<<<< HEAD
   m_SpotAngle: 16.287535
   m_InnerSpotAngle: 15.473158
-=======
-  m_SpotAngle: 4.071884
-  m_InnerSpotAngle: 4.071884
->>>>>>> origin/NewMap
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -102,7 +94,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-<<<<<<< HEAD
 --- !u!114 &1996687034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e46f064048c15f4fb026bd3f89c96c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> origin/NewMap
 --- !u!1 &8318502091064045461
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,11 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 1
-=======
-  m_IsActive: 0
->>>>>>> origin/NewMap
 --- !u!4 &8318502091064045462
 Transform:
   m_ObjectHideFlags: 0
@@ -314,19 +299,11 @@ GameObject:
   - component: {fileID: 699467664}
   - component: {fileID: 2002197948861842748}
   - component: {fileID: 699467668}
-<<<<<<< HEAD
 <<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Player.prefab
   m_Layer: 11
   m_Name: Player
 =======
   - component: {fileID: 667177643}
-=======
-  - component: {fileID: 667177643}
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
-  m_Layer: 11
-  m_Name: Blue Player
-=======
->>>>>>> origin/NewMap
   m_Layer: 10
   m_Name: Red Player
 >>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
@@ -443,19 +420,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5f0b80b905efc4cb2e52fd93212728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   ammoCount: 10000
   magazineSize: 10000000
   origin: {fileID: 8318502091805469917}
   bullet: {fileID: 4204093134777823205, guid: 430fc7ca31cf2dc4d855b8be0a859bf4, type: 3}
   speed: 40
-=======
-  ammoCount: 30
-  magazineSize: 30
-  origin: {fileID: 8318502091805469917}
-  bullet: {fileID: 4204093134777823205, guid: 430fc7ca31cf2dc4d855b8be0a859bf4, type: 3}
-  speed: 90
->>>>>>> origin/NewMap
   shots: 3
   spotLight: {fileID: 1376459845}
   ammoCountText: {fileID: 0}
@@ -565,34 +534,8 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9a506eed-dda3-40ac-97c7-7d24cc692619
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-<<<<<<< HEAD
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
-=======
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 667177643}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnCamera
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: dd681c88-4912-449b-af67-898c0aabaa11
-    m_ActionName: Player/Camera[/Mouse/delta,/DualShock4GamepadHID/rightStick]
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard
-=======
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
->>>>>>> origin/NewMap
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 8318502092494901915}
@@ -608,24 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dffd5bff02e3554692430a15a1f8fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   isGrounded: 1
   moveSpeed: 12
   jumpForce: 25
-=======
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
-  camera: {fileID: 8318502092494901915}
-  player: {fileID: 8318502092369714384}
-  isGrounded: 1
-  moveSpeed: 12
-  jumpForce: 25
-  mouseSen: 1
-=======
-  isGrounded: 1
-  moveSpeed: 12
-  jumpForce: 25
->>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
->>>>>>> origin/NewMap
 --- !u!1 &8318502092494901912
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,13 +583,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092494901912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
 <<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Player.prefab
   m_LocalPosition: {x: 0.56, y: 1.6, z: -4.73}
-=======
-<<<<<<< HEAD:Team 5 Prototype/Assets/Prefabs/Player/Blue Player.prefab
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.3}
->>>>>>> origin/NewMap
 =======
   m_LocalPosition: {x: 0.2, y: 1.42, z: -4.73}
 >>>>>>> origin/NewMap:Team 5 Prototype/Assets/Prefabs/Player/Red Player.prefab
@@ -690,7 +613,6 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-<<<<<<< HEAD
     x: 0
     y: 0
     width: 1
@@ -698,15 +620,6 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-=======
-    x: 0.5
-    y: 0
-    width: 0.5
-    height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
-  field of view: 90
->>>>>>> origin/NewMap
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -772,11 +685,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092494901912}
-<<<<<<< HEAD
   m_Enabled: 1
-=======
-  m_Enabled: 0
->>>>>>> origin/NewMap
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8404f95a32e490443b46bc083f8991f2, type: 3}
   m_Name: 
