@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - BoostPad
+  - Spawn Point
+  - Ramp
   layers:
   - Default
   - TransparentFX

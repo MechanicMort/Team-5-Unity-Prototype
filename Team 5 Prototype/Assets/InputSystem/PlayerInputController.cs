@@ -90,6 +90,14 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
+    private void CheckDead()
+    {
+        if (playerHealth<= 0)
+        {
+            FullReset();
+           transform.position = GameObject.FindGameObjectsWithTag("Spawn Point")[Random.Range(0,GameObject.FindGameObjectsWithTag("Spawn Point").Length-1) ].transform.position;
+        }
+    }
     public void RestoreValue(float time)
     {
         StartCoroutine(RestoreNormal(time));
@@ -107,6 +115,7 @@ public class PlayerInputController : MonoBehaviour
         OverCalcs();
         Movement();
         GetColour();
+        CheckDead();
         thisGun.fireRateMod = fireRateMulti;
         if (isShoot)
         {
@@ -211,6 +220,12 @@ public class PlayerInputController : MonoBehaviour
         abilityOne.abilityOwner = this.gameObject;
         abilityTwo.abilityOwner = this.gameObject;
         Ultimate.abilityOwner = this.gameObject;
+    }
+
+    private void FullReset()
+    {
+        ApplyClass();
+        ApplyWeaponStats();
     }
 
     private IEnumerator AbilityCoolDowns()
