@@ -66,6 +66,7 @@
     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\UVPaintShow.cs" />
     <Compile Include="Assets\Scripts\WeaponStats.cs" />
+    <Compile Include="Assets\Scripts\AiMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\InputSystemTest.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\ProjectilePaint.cs" />
