@@ -59,7 +59,14 @@ public class Ability : ScriptableObject
                 abilityOwner.GetComponent<PlayerInputController>().abilitySpeed = 0.0f;
                 abilityOwner.GetComponent<PlayerInputController>().RestoreValue(2f);
                 break;
-
+            case "PaintNade":
+                Debug.Log("PaintNade");
+                abilityOwner.GetComponent<GunScript>().ThrowNade("");
+                break;
+            case "WaterNade":
+                Debug.Log("waterNade");
+                abilityOwner.GetComponent<GunScript>().ThrowNade("Water");
+                break;
             default:
                 Debug.Log("Error");
                 break;

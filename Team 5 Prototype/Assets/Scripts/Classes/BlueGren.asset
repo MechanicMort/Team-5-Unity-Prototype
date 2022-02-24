@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ebdf988b9368244852e8629758f252, type: 3}
   m_Name: BlueGren
   m_EditorClassIdentifier: 
-  ShieldRegen: 0
-  HealthRegen: 0
-  HealthMax: 0
-  ShieldMax: 0
-  moveSpeed: 0
-  jumpForce: 0
-  ability1: {fileID: 0}
-  ability2: {fileID: 0}
-  Ultimate: {fileID: 0}
+  ShieldRegen: 0.2
+  HealthRegen: 0.1
+  HealthMax: 100
+  ShieldMax: 30
+  moveSpeed: 14
+  jumpForce: 10
+  ability1: {fileID: 11400000, guid: 47dcc23d318bc2041981f6e58cfe8cf1, type: 2}
+  ability2: {fileID: 11400000, guid: cf0c82d5a7dfd0949bf2202a330f3ebf, type: 2}
+  Ultimate: {fileID: 11400000, guid: 6c254afbf8590d4429cb4b5146777fcc, type: 2}

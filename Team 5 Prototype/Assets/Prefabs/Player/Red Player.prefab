@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376459844}
   - component: {fileID: 1376459845}
+  - component: {fileID: 711334452}
   m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
@@ -93,6 +94,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &711334452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376459843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e46f064048c15f4fb026bd3f89c96c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accuracy: 0
 --- !u!1 &8318502091064045461
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8318502091064045462
 Transform:
   m_ObjectHideFlags: 0
@@ -283,7 +297,6 @@ GameObject:
   - component: {fileID: 8318502092369714389}
   - component: {fileID: 8318502092369714388}
   - component: {fileID: 699467662}
-  - component: {fileID: 699467664}
   - component: {fileID: 2002197948861842748}
   - component: {fileID: 699467668}
   - component: {fileID: 667177643}
@@ -389,7 +402,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &699467662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,47 +419,19 @@ MonoBehaviour:
   magazineSize: 30
   origin: {fileID: 8318502091805469917}
   bullet: {fileID: 4204093134777823205, guid: 430fc7ca31cf2dc4d855b8be0a859bf4, type: 3}
+  waterNae: {fileID: 3744696977912419299, guid: f7e3339ace0f10748b2b8d850a5bee48, type: 3}
+  paintNade: {fileID: 0}
   speed: 90
   shots: 3
   spotLight: {fileID: 1376459845}
   ammoCountText: {fileID: 0}
   fireRate: 0.1
+  fireRateMod: 1
   fireRateCounter: 0
   damage: 10
-  camera: {fileID: 0}
---- !u!114 &699467664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8318502092369714394}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b843d6a263d8e6f45bcc520cb6353d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerShieldRegen: 0
-  playerHealthRegen: 0
-  playerRegenTimer: 0
-  regenTimerDone: 0
-  playerOverHealth: 0
-  playerOverShield: 0
-  playerHealth: 100
-  playerHealthMax: 100
-  playerShield: 50
-  playerShieldMax: 50
-  abilityOne: {fileID: 11400000, guid: dc3973258d1250748b06a415820ab7b9, type: 2}
-  abilityOneCoolDown: 0
-  abilityTwo: {fileID: 11400000, guid: 07be32dc89b2a9e44837e2a0932e3c4d, type: 2}
-  abilityTwoCoolDown: 0
-  Ultimate: {fileID: 11400000, guid: 6c254afbf8590d4429cb4b5146777fcc, type: 2}
-  ultimateCoolDown: 0
-  rb: {fileID: 0}
-  moveSpeed: 12
-  jumpForce: 10
-  isGrounded: 1
-  origin: {fileID: 0}
+  accuracy: 0
+  recoilAmount: 0
+  isSquid: 0
 --- !u!114 &2002197948861842748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,6 +501,42 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9a506eed-dda3-40ac-97c7-7d24cc692619
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 667177643}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: OnCamera
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dd681c88-4912-449b-af67-898c0aabaa11
+    m_ActionName: Player/Camera[/Mouse/delta,/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1c084362-cfd1-4a35-93b7-45be94375e50
+    m_ActionName: Player/Shoot[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea2735de-3dd4-460c-9561-d1604b43ff94
+    m_ActionName: Player/SquidMode[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aeb8d3b4-4473-4a1f-93ae-05a047cf5824
+    m_ActionName: Player/Ability 1[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b8e9ac46-dbd3-4cf6-b876-59dab9b4053f
+    m_ActionName: Player/Ability 2[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f2bc5268-61ce-4107-969c-6e72b5ab1dc8
+    m_ActionName: Player/Ultimate[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
@@ -533,8 +554,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dffd5bff02e3554692430a15a1f8fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 8318502092494901915}
+  player: {fileID: 8318502092369714384}
+  mouseSen: 1
+  playerShieldRegen: 0
+  playerHealthRegen: 0
+  playerRegenTimer: 0
+  regenTimerDone: 0
+  playerOverHealth: 0
+  playerOverShield: 0
+  playerHealth: 10
+  playerHealthMax: 10
+  playerShield: 0
+  playerShieldMax: 0
+  fireRateMulti: 1
+  heldWeapon: {fileID: 11400000, guid: 3438acb6c7b560d4b967c8ab32757781, type: 2}
+  currentClass: {fileID: 0}
+  abilityOne: {fileID: 0}
+  abilityOneCoolDown: 0
+  abilityTwo: {fileID: 0}
+  abilityTwoCoolDown: 0
+  Ultimate: {fileID: 0}
+  ultimateCoolDown: 0
   isGrounded: 1
   moveSpeed: 12
+  abilitySpeed: 1
+  hasDoubleJump: 0
+  hasDoubleJumpUp: 0
   jumpForce: 25
 --- !u!1 &8318502092494901912
 GameObject:
@@ -546,7 +592,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8318502092494901908}
   - component: {fileID: 8318502092494901915}
-  - component: {fileID: 8318502092494901914}
   - component: {fileID: 8318502092494901913}
   - component: {fileID: 8318502092494901909}
   - component: {fileID: 660919415}
@@ -565,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092494901912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 1.42, z: -4.73}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1376459844}
@@ -593,11 +638,11 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.5
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -615,14 +660,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8318502092494901914
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8318502092494901912}
-  m_Enabled: 1
 --- !u!114 &8318502092494901913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,7 +700,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502092494901912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8404f95a32e490443b46bc083f8991f2, type: 3}
   m_Name: 

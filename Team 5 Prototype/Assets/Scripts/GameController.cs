@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     {
         print(PlayerPrefs.GetString("RedPlayerClass"));
         print(PlayerPrefs.GetString("BluePlayerClass"));
+        PlayerPrefs.SetString("BluePlayerClass", "Gren");
         if (PlayerPrefs.GetString("RedPlayerClass") == "Heavy")
         {
             players[0].GetComponent<PlayerInputController>().currentClass = classHolder[0];

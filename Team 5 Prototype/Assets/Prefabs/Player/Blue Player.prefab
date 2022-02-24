@@ -228,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8318502091805469857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.701, z: 1.05}
+  m_LocalPosition: {x: 0, y: 0.701, z: 1.14}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8318502092369714384}
@@ -402,7 +402,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &699467662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,11 +419,14 @@ MonoBehaviour:
   magazineSize: 30
   origin: {fileID: 8318502091805469917}
   bullet: {fileID: 4204093134777823205, guid: 430fc7ca31cf2dc4d855b8be0a859bf4, type: 3}
+  waterNae: {fileID: 0}
+  paintNade: {fileID: 0}
   speed: 90
   shots: 3
   spotLight: {fileID: 1376459845}
   ammoCountText: {fileID: 0}
   fireRate: 0.1
+  fireRateMod: 1
   fireRateCounter: 0
   damage: 10
   accuracy: 0
@@ -530,6 +533,70 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1c084362-cfd1-4a35-93b7-45be94375e50
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 667177643}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: GetSquid
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ea2735de-3dd4-460c-9561-d1604b43ff94
+    m_ActionName: Player/SquidMode[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 667177643}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: UseAbility1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aeb8d3b4-4473-4a1f-93ae-05a047cf5824
+    m_ActionName: Player/Ability 1[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 667177643}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: UseAbility2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b8e9ac46-dbd3-4cf6-b876-59dab9b4053f
+    m_ActionName: Player/Ability 2[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 667177643}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: UseUltimate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f2bc5268-61ce-4107-969c-6e72b5ab1dc8
+    m_ActionName: Player/Ultimate[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -556,12 +623,13 @@ MonoBehaviour:
   regenTimerDone: 0
   playerOverHealth: 0
   playerOverShield: 0
-  playerHealth: 0
-  playerHealthMax: 0
+  playerHealth: 10
+  playerHealthMax: 10
   playerShield: 0
   playerShieldMax: 0
+  fireRateMulti: 1
   heldWeapon: {fileID: 11400000, guid: 3438acb6c7b560d4b967c8ab32757781, type: 2}
-  currentClass: {fileID: 11400000, guid: aa36ca4ffde5f4b4fac3676fde15731c, type: 2}
+  currentClass: {fileID: 0}
   abilityOne: {fileID: 0}
   abilityOneCoolDown: 0
   abilityTwo: {fileID: 0}
@@ -570,6 +638,9 @@ MonoBehaviour:
   ultimateCoolDown: 0
   isGrounded: 1
   moveSpeed: 12
+  abilitySpeed: 1
+  hasDoubleJump: 0
+  hasDoubleJumpUp: 0
   jumpForce: 25
 --- !u!1 &8318502092494901912
 GameObject:

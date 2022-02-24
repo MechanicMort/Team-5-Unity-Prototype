@@ -68,11 +68,13 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ExplosiveScript.cs" />
      <Compile Include="Assets\Scripts\CrossHair.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\MeshPainting\Scripts\UVPainter.cs" />
      <Compile Include="Assets\Scripts\GravityLifts.cs" />
      <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
      <Compile Include="Assets\MeshPainting\Scripts\UVPaintController.cs" />
-     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Bombs.cs" />
+     <Compile Include="Assets\Scripts\Nades.cs" />
      <None Include="Assets\MeshPainting\Shaders\PaintOnUV.shader" />
      <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
  <Reference Include="UnityEngine">

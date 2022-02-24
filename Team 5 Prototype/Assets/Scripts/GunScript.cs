@@ -9,6 +9,8 @@ public class GunScript : MonoBehaviour
     public float magazineSize;
     public Transform origin;
     public GameObject bullet;
+    public GameObject waterNae;
+    public GameObject paintNade;
     public float speed;
     public float shots;
     public Light spotLight;
@@ -67,11 +69,40 @@ public class GunScript : MonoBehaviour
                 proj.transform.LookAt(target);
                 Rigidbody rig = proj.GetComponent<Rigidbody>();
                 rig.AddForce(proj.transform.forward * speed, ForceMode.VelocityChange);
-                spotLight.GetComponent<SpotlightDilation>().Recoil(recoilAmount);
+
 
             }
+            spotLight.GetComponent<SpotlightDilation>().Recoil(recoilAmount);
         }
         
         
     }
-}
+
+    public void ThrowNade(string nadeType)
+    {
+
+                float radius = Mathf.Tan(Mathf.Deg2Rad * spotLight.spotAngle / 2) * spotLight.range;
+                Vector2 circle = Random.insideUnitCircle * radius;
+                Vector3 target = spotLight.transform.position + spotLight.transform.forward * spotLight.range + spotLight.transform.rotation * new Vector3(circle.x, circle.y);
+                GameObject proj;
+                if (nadeType == "Water")
+                {
+                    proj = Instantiate(waterNae, origin.position, bullet.transform.rotation);
+            proj.GetComponent<Nades>().team = 0;
+        }
+                else
+                {
+                    proj = Instantiate(paintNade, origin.position, bullet.transform.rotation);
+            proj.GetComponent<Nades>().team = gameObject.layer;
+        }
+
+
+                proj.transform.LookAt(target);
+                Rigidbody rig = proj.GetComponent<Rigidbody>();
+                rig.AddForce(proj.transform.forward * speed, ForceMode.VelocityChange);
+
+            
+    }
+
+    }
+
