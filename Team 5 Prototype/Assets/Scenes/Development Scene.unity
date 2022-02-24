@@ -74134,6 +74134,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 667177643, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
+      propertyPath: mouseSen
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 699467662, guid: 5e6b79cf3fdc75140aa91f6f407bac2a, type: 3}
       propertyPath: paintNade
       value: 

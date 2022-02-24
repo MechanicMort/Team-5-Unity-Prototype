@@ -106,6 +106,7 @@ public class PlayerInputController : MonoBehaviour
         RegenPlayer();
         OverCalcs();
         Movement();
+        Lok();
         GetColour();
         CheckDead();
         thisGun.fireRateMod = fireRateMulti;
@@ -129,6 +130,16 @@ public class PlayerInputController : MonoBehaviour
 
     }
 
+    void Lok()
+    {
+
+        mX += cameraInput.x * mouseSen;
+        mY -= cameraInput.y * mouseSen;
+        mY = Mathf.Clamp(mY, -80, 80);
+        camera.transform.rotation = Quaternion.Euler(mY, mX, 0);
+        player.transform.rotation = Quaternion.Euler(0, mX, 0);
+
+    }
 
     public void GetSquid(InputAction.CallbackContext context)
     {
@@ -392,15 +403,6 @@ public class PlayerInputController : MonoBehaviour
     public void OnCamera(InputAction.CallbackContext context)
     {
         cameraInput = context.ReadValue<Vector2>();
-
-        mX += cameraInput.x * mouseSen;
-        mY -= cameraInput.y * mouseSen;
-        mY = Mathf.Clamp(mY, -80, 80);
-        camera.transform.rotation = Quaternion.Euler(mY, mX, 0);
-        player.transform.rotation = Quaternion.Euler(0, mX, 0);
-
-
-
     }
 
 

@@ -224,6 +224,17 @@
                 },
                 {
                     "name": "",
+                    "id": "903781a3-a323-4b9a-a32f-2312ec6defe8",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "SquidMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8d1dd00c-aaae-4ad8-b608-660503fbf801",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -236,10 +247,10 @@
                 {
                     "name": "",
                     "id": "f8fdf87d-4628-4bf8-adf0-46159ab46f4d",
-                    "path": "",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Controller",
                     "action": "Ability 1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -257,11 +268,33 @@
                 },
                 {
                     "name": "",
+                    "id": "4bac75dc-9529-4288-880f-1d5aee950484",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Ability 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ef5f77b4-3d49-41c4-a892-2532dacecc02",
                     "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e37c33fb-ac21-48b3-9bb8-e73388a01986",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
                     "action": "Ultimate",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -246,7 +246,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a060bcbb-1604-4082-89e8-8d8b21a5105d"",
+                    ""id"": ""903781a3-a323-4b9a-a32f-2312ec6defe8"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -268,8 +268,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e901e2e8-73ec-415b-902c-dadc2ff23041"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""id"": ""f8fdf87d-4628-4bf8-adf0-46159ab46f4d"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -290,8 +290,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""177c70ee-2b30-44ca-8f66-2d3aef82bbca"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""id"": ""4bac75dc-9529-4288-880f-1d5aee950484"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -312,7 +312,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""42ee7148-abc1-4c2f-996c-77d44caf01fe"",
+                    ""id"": ""e37c33fb-ac21-48b3-9bb8-e73388a01986"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
