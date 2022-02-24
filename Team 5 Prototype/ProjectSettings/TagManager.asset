@@ -5,8 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - BoostPad
+<<<<<<< HEAD
   - Spawn Point
   - Ramp
+=======
+  - Node
+>>>>>>> origin/AI
   layers:
   - Default
   - TransparentFX

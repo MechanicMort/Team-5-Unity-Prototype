@@ -15,11 +15,19 @@ C:/Users/skuld/source/repos/Team-5-Unity-Prototype/Team 5 Prototype
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 54702
 Successfully changed project path to: C:/Users/skuld/source/repos/Team-5-Unity-Prototype/Team 5 Prototype
 C:/Users/skuld/source/repos/Team-5-Unity-Prototype/Team 5 Prototype
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 77.23 ms, found 2 plugins.
+=======
+53611
+Successfully changed project path to: C:/Development/Team-5-Unity-Prototype/Team 5 Prototype
+C:/Development/Team-5-Unity-Prototype/Team 5 Prototype
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 61.09 ms, found 2 plugins.
+>>>>>>> origin/AI
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.26f1 (7298b473bc1a)
 [Subsystems] Discovering subsystems at path C:/Program Files (x86)/2020.3.26f1/Editor/Data/Resources/UnitySubsystems
@@ -32,6 +40,7 @@ Direct3D:
     VRAM:     10078 MB
     Driver:   30.0.14.9676
 Initialize mono
+<<<<<<< HEAD
 Mono path[0] = 'C:/Program Files (x86)/2020.3.26f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files (x86)/2020.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files (x86)/2020.3.26f1/Editor/Data/MonoBleedingEdge/etc'
@@ -48,11 +57,30 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (656ms)
 		BeginReloadAssembly (56ms)
+=======
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56572
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001901 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 60.04 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.538 seconds
+Domain Reload Profiling:
+	ReloadAssembly (538ms)
+		BeginReloadAssembly (48ms)
+>>>>>>> origin/AI
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 		EndReloadAssembly (519ms)
 			LoadAssemblies (54ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
@@ -60,19 +88,36 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (31ms)
 			SetupLoadedEditorAssemblies (214ms)
+=======
+		EndReloadAssembly (424ms)
+			LoadAssemblies (46ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (133ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (171ms)
+>>>>>>> origin/AI
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
+<<<<<<< HEAD
 				RefreshPlugins (74ms)
 				BeforeProcessingInitializeOnLoad (17ms)
 				ProcessInitializeOnLoadAttributes (88ms)
 				ProcessInitializeOnLoadMethodAttributes (29ms)
+=======
+				RefreshPlugins (60ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (70ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+>>>>>>> origin/AI
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.008341 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -83,10 +128,23 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1391ms)
 		BeginReloadAssembly (151ms)
+=======
+Registered in 0.005282 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 62.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.153 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1153ms)
+		BeginReloadAssembly (126ms)
+>>>>>>> origin/AI
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (20ms)
 		EndReloadAssembly (1172ms)
 			LoadAssemblies (100ms)
@@ -95,9 +153,20 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (63ms)
 			SetupLoadedEditorAssemblies (489ms)
+=======
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (965ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (310ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (405ms)
+>>>>>>> origin/AI
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
+<<<<<<< HEAD
 				RefreshPlugins (76ms)
 				BeforeProcessingInitializeOnLoad (111ms)
 				ProcessInitializeOnLoadAttributes (280ms)
@@ -118,6 +187,28 @@ System memory in use after: 162.1 MB.
 
 Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4119.
 Total: 4.093500 ms (FindLiveObjects: 0.367800 ms CreateObjectMapping: 0.326200 ms MarkObjects: 3.320600 ms  DeleteObjects: 0.077400 ms)
+=======
+				RefreshPlugins (62ms)
+				BeforeProcessingInitializeOnLoad (91ms)
+				ProcessInitializeOnLoadAttributes (234ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3675 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 163.0 MB.
+System memory in use after: 163.2 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4117.
+Total: 3.210900 ms (FindLiveObjects: 0.239700 ms CreateObjectMapping: 0.164700 ms MarkObjects: 2.727600 ms  DeleteObjects: 0.078000 ms)
+>>>>>>> origin/AI
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,6 +222,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   path: Assets/Scripts/Weapons/splatterRifle.asset
   artifactKey: Guid(3438acb6c7b560d4b967c8ab32757781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/Weapons/splatterRifle.asset using Guid(3438acb6c7b560d4b967c8ab32757781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41ed57d974f064849bc4c907f27c4efc') in 0.056029 seconds 
@@ -189,19 +281,32 @@ System memory in use after: 152.5 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4121.
 Total: 3.993900 ms (FindLiveObjects: 0.334600 ms CreateObjectMapping: 0.265300 ms MarkObjects: 3.369200 ms  DeleteObjects: 0.023600 ms)
+=======
+  path: Assets/Max/Maximilian_Monocle_Albedo.TGA
+  artifactKey: Guid(3b71398cd6379cd408a2f9e35579e49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max/Maximilian_Monocle_Albedo.TGA using Guid(3b71398cd6379cd408a2f9e35579e49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39325e1a97c5c499f30768ec2182176c') in 0.064275 seconds 
+  Import took 0.068934 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Max/Maximilian_Head_Albedo.tga
+  artifactKey: Guid(2468d35494a50ae4ba7d5ec645c98797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max/Maximilian_Head_Albedo.tga using Guid(2468d35494a50ae4ba7d5ec645c98797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e6961ec4266dca5c6eb68f93823c181') in 0.027290 seconds 
+  Import took 0.032091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Max/MA_Hands_White_Albedo.tga
+  artifactKey: Guid(8f3afed861c011749b5dd5a45cd9f548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max/MA_Hands_White_Albedo.tga using Guid(8f3afed861c011749b5dd5a45cd9f548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba90229882bfdc51eb13f275060a8ee8') in 0.014376 seconds 
+  Import took 0.019167 seconds .
+>>>>>>> origin/AI
+
+========================================================================
+Received Import Request.
+<<<<<<< HEAD
   Time since last request: 630.752126 seconds.
   path: Assets/Low Poly Weapons VOL.1/Models/SR_Scope_00.fbx
   artifactKey: Guid(2e652e63fbd52af41856733acbfe5c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -509,18 +614,24 @@ System memory in use after: 159.0 MB.
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4209.
 Total: 3.512300 ms (FindLiveObjects: 0.271200 ms CreateObjectMapping: 0.196800 ms MarkObjects: 2.990800 ms  DeleteObjects: 0.052300 ms)
+=======
+  Time since last request: 0.000270 seconds.
+  path: Assets/Max
+  artifactKey: Guid(b794e3880f233d44daf8a3fdfa62e432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max using Guid(b794e3880f233d44daf8a3fdfa62e432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '701de64f35ce5c3b44257b2a08c3bb19') in 0.006358 seconds 
+  Import took 0.011697 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Max/Maximilian_BodyHands_Albedo.tga
+  artifactKey: Guid(302d62ab044ba054aa7e7ef5e56ca02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max/Maximilian_BodyHands_Albedo.tga using Guid(302d62ab044ba054aa7e7ef5e56ca02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7353b13e69f4dc305299be108449edb2') in 0.013168 seconds 
+  Import took 0.018187 seconds .
+>>>>>>> origin/AI
+
+========================================================================
+<<<<<<< HEAD
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.007526 seconds.
@@ -565,19 +676,34 @@ System memory in use after: 159.0 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4211.
 Total: 3.781400 ms (FindLiveObjects: 0.361600 ms CreateObjectMapping: 0.297300 ms MarkObjects: 3.103000 ms  DeleteObjects: 0.018300 ms)
+=======
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Max/Maximilian_walk_neutral_01.msh
+  artifactKey: Guid(c39dda3bf0988b5488a06d04a13996f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max/Maximilian_walk_neutral_01.msh using Guid(c39dda3bf0988b5488a06d04a13996f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fa8ebff4e742bd76e1d16079f28d94c') in 0.008783 seconds 
+  Import took 0.013434 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3.045964 seconds.
+  path: Assets/Max/Walk.anm
+  artifactKey: Guid(9ac9709ec195c6a40837ba1d927bdbc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max/Walk.anm using Guid(9ac9709ec195c6a40837ba1d927bdbc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '965be0044b787ab450714b9c979eb005') in 0.010949 seconds 
+  Import took 0.015675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.555119 seconds.
+  path: Assets/Materials/AI.mat
+  artifactKey: Guid(1dca5331876b4004fa4c89b94774d579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/AI.mat using Guid(1dca5331876b4004fa4c89b94774d579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eaf7ca026a34c077728358ef4bd39bc') in 0.164313 seconds 
+  Import took 0.169937 seconds .
+>>>>>>> origin/AI
+
 ========================================================================
 Received Prepare
+<<<<<<< HEAD
 Registering precompiled user dll's ...
 Registered in 0.005535 seconds.
 Begin MonoManager ReloadAssembly
@@ -621,6 +747,16 @@ System memory in use after: 159.0 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4213.
 Total: 3.866700 ms (FindLiveObjects: 0.319700 ms CreateObjectMapping: 0.250800 ms MarkObjects: 3.274800 ms  DeleteObjects: 0.019700 ms)
+=======
+Refreshing native plugins compatible for Editor in 3.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 4225.
+Total: 3.596300 ms (FindLiveObjects: 0.243400 ms CreateObjectMapping: 0.167800 ms MarkObjects: 3.172900 ms  DeleteObjects: 0.011500 ms)
+>>>>>>> origin/AI
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -633,6 +769,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+<<<<<<< HEAD
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.006030 seconds.
@@ -677,18 +814,25 @@ System memory in use after: 159.1 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4215.
 Total: 3.402700 ms (FindLiveObjects: 0.288300 ms CreateObjectMapping: 0.237900 ms MarkObjects: 2.859900 ms  DeleteObjects: 0.015800 ms)
+=======
+Received Import Request.
+  Time since last request: 62.972077 seconds.
+  path: Assets/Max (1)
+  artifactKey: Guid(928d939721685254d8ddf670f03f213b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1) using Guid(928d939721685254d8ddf670f03f213b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f53676a9af2beae4aacc8d2d1f2c2d66') in 0.006307 seconds 
+  Import took 0.011532 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 0.845750 seconds.
+  path: Assets/Max (1)/MA_Hands_White_Albedo.tga
+  artifactKey: Guid(99b11fd2dbaa54246a49b5364c41f5f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/MA_Hands_White_Albedo.tga using Guid(99b11fd2dbaa54246a49b5364c41f5f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '470c0042634deddd88abe87da3db88ea') in 0.021393 seconds 
+  Import took 0.026642 seconds .
+>>>>>>> origin/AI
+
+========================================================================
+<<<<<<< HEAD
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.005380 seconds.
@@ -733,20 +877,83 @@ System memory in use after: 159.1 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4217.
 Total: 3.563400 ms (FindLiveObjects: 0.298700 ms CreateObjectMapping: 0.230500 ms MarkObjects: 3.016300 ms  DeleteObjects: 0.017200 ms)
+=======
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Max (1)/Maximilian_Monocle_Albedo.TGA
+  artifactKey: Guid(2e19de18cf564874385e2b03c4bc048b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Maximilian_Monocle_Albedo.TGA using Guid(2e19de18cf564874385e2b03c4bc048b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f485d43c9336e8d85734eb1be8f05315') in 0.007033 seconds 
+  Import took 0.012602 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Max (1)/Maximilian_Head_Albedo.tga
+  artifactKey: Guid(89a9a99fbde687c409b3eceab302e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Maximilian_Head_Albedo.tga using Guid(89a9a99fbde687c409b3eceab302e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bf1b9c54b7f84b7e490beefaca2a678') in 0.013364 seconds 
+  Import took 0.018854 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Max (1)/Maximilian_BodyHands_Albedo.tga
+  artifactKey: Guid(919f9a85190abfb4aa341fd34fe4523c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Maximilian_BodyHands_Albedo.tga using Guid(919f9a85190abfb4aa341fd34fe4523c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '878df02b182bf861ae27a5e639376174') in 0.013223 seconds 
+  Import took 0.019252 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.239195 seconds.
+  path: Assets/Max (1)/Maximilian_walk_neutral_01.msh
+  artifactKey: Guid(8d7543ebd45690c469e4520d73b3e3c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Maximilian_walk_neutral_01.msh using Guid(8d7543ebd45690c469e4520d73b3e3c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b4af957d3588d5e89f220a70aecc6e4') in 0.002903 seconds 
+  Import took 0.009229 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.686924 seconds.
+  path: Assets/Max (1)/Walk.anm
+  artifactKey: Guid(7320ce21fe32394408f80cd8672553c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Walk.anm using Guid(7320ce21fe32394408f80cd8672553c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab76aab629e7a0090e4b549cb4438ad9') in 0.002652 seconds 
+  Import took 0.008407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.271861 seconds.
+  path: Assets/Max (1)/Materials
+  artifactKey: Guid(2621ad273657aff459055f9b5c4bb08c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Materials using Guid(2621ad273657aff459055f9b5c4bb08c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d2b1f85d5c2c450004430116da4236d') in 0.005824 seconds 
+  Import took 0.011236 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.056089 seconds.
+  path: Assets/Max (1)/Materials/MA_Hands_White_Albedo.mat
+  artifactKey: Guid(4377c7f4eef55784ebbd59203c0ba8e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Materials/MA_Hands_White_Albedo.mat using Guid(4377c7f4eef55784ebbd59203c0ba8e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c498ce61ad118a095c1bd0b6f5e9794') in 0.013655 seconds 
+  Import took 0.018447 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Max (1)/Materials/Maximilian_Head_Albedo.mat
+  artifactKey: Guid(2f51855fa2479bc4f962da5bfef846b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Materials/Maximilian_Head_Albedo.mat using Guid(2f51855fa2479bc4f962da5bfef846b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8d202f9671b1a4f2b0f3789c31b463') in 0.014232 seconds 
+  Import took 0.019058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Max (1)/Materials/Maximilian_BodyHands_Albedo.mat
+  artifactKey: Guid(53f8de9fd5b37f64cba9f1c642fe2f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Max (1)/Materials/Maximilian_BodyHands_Albedo.mat using Guid(53f8de9fd5b37f64cba9f1c642fe2f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac45e0ac2abf84f3d84b0a2bd18c3629') in 0.015578 seconds 
+  Import took 0.020669 seconds .
+>>>>>>> origin/AI
+
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.005661 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -757,13 +964,31 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1245ms)
 		BeginReloadAssembly (118ms)
+=======
+Registered in 0.004823 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.031 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1031ms)
+		BeginReloadAssembly (132ms)
+>>>>>>> origin/AI
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (33ms)
 		EndReloadAssembly (1058ms)
 			LoadAssemblies (95ms)
+=======
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (846ms)
+			LoadAssemblies (83ms)
+>>>>>>> origin/AI
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (359ms)
 			ReleaseScriptCaches (1ms)
@@ -773,6 +998,7 @@ Domain Reload Profiling:
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
+<<<<<<< HEAD
 				BeforeProcessingInitializeOnLoad (105ms)
 				ProcessInitializeOnLoadAttributes (275ms)
 				ProcessInitializeOnLoadMethodAttributes (9ms)
@@ -780,15 +1006,33 @@ Domain Reload Profiling:
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (17ms)
+=======
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (215ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+>>>>>>> origin/AI
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+<<<<<<< HEAD
 Unloading 3542 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 158.8 MB.
 System memory in use after: 159.1 MB.
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4219.
 Total: 3.847100 ms (FindLiveObjects: 0.270500 ms CreateObjectMapping: 0.200600 ms MarkObjects: 3.353900 ms  DeleteObjects: 0.021100 ms)
+=======
+Unloading 3539 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.5 MB.
+System memory in use after: 158.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4200.
+Total: 3.152700 ms (FindLiveObjects: 0.242300 ms CreateObjectMapping: 0.158000 ms MarkObjects: 2.736700 ms  DeleteObjects: 0.015100 ms)
+>>>>>>> origin/AI
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -802,6 +1046,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   Time since last request: 834.245674 seconds.
   path: Assets/Scripts/Abilities/AbilityTestTwo.asset
   artifactKey: Guid(07be32dc89b2a9e44837e2a0932e3c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -8268,3 +8513,12 @@ C:\Windows\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFD4D930000), size: 1982464 (r
 
 A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
  * C:/Users/skuld/AppData/Local/Temp/Unity/Editor/Crashes
+=======
+  Time since last request: 498.697272 seconds.
+  path: Assets/Settings/UniversalRP-HighQuality.asset
+  artifactKey: Guid(19ba41d7c0026c3459d37c2fe90c55a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/UniversalRP-HighQuality.asset using Guid(19ba41d7c0026c3459d37c2fe90c55a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20b8dd035b282f2930df69f6e5b26d73') in 0.029509 seconds 
+  Import took 0.034699 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+>>>>>>> origin/AI
