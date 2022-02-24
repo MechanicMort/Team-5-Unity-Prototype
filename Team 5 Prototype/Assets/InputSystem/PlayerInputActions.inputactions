@@ -235,6 +235,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f8fdf87d-4628-4bf8-adf0-46159ab46f4d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ability 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "11c52e3b-7825-4e74-ad0e-f9eaff0bc8ee",
                     "path": "<Keyboard>/e",
                     "interactions": "",
