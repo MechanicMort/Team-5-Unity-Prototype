@@ -6,13 +6,11 @@ public class DestroyBullet : MonoBehaviour
 {
     public GameObject obj;
     public GameObject paintSplatter;
-    public ParticleSystem particle;
-
+    public GameObject particles;
 
     private void OnTriggerEnter(Collider collision)
     {
-        particle.Play();
-        Destroy(obj);
-        
+        Instantiate(particles, this.transform.position, Quaternion.identity);
+        Destroy(obj);     
     }
 }

@@ -22,4 +22,4 @@ MonoBehaviour:
   recoilAmount: 4
   weaponName: SpraySMG
   weaponMesh: {fileID: 4300000, guid: ff8c9f278b5bc8e4c894e1122f4a81f3, type: 3}
-  weaponNoise: {fileID: 0}
+  weaponNoise: {fileID: 8300000, guid: 88028d39f9ce6a3408f9fc4e2a653ae9, type: 3}

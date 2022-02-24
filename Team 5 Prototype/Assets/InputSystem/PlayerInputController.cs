@@ -40,6 +40,7 @@ public class PlayerInputController : MonoBehaviour
     public WeaponStats heldWeapon;
     private GunScript thisGun;
     private bool isShoot;
+    public AudioSource shootingSound;
 
     [Header("Player Class")]
     public ClassHolder currentClass;
@@ -108,9 +109,9 @@ public class PlayerInputController : MonoBehaviour
         Movement();
         GetColour();
         thisGun.fireRateMod = fireRateMulti;
+
         if (isShoot)
-        {
-            
+        {           
             thisGun.ShootBullet();
         }
     }
@@ -193,6 +194,8 @@ public class PlayerInputController : MonoBehaviour
         thisGun.shots = heldWeapon.pelletCount;
         thisGun.accuracy = heldWeapon.accuracy;
         thisGun.recoilAmount = heldWeapon.recoilAmount;
+        thisGun.gunMesh = heldWeapon.weaponMesh;
+        //thisGun.shootingSound = heldWeapon.weaponNoise;
 
     }
     public void ApplyClass()
