@@ -33,6 +33,7 @@ public class PlayerUIManagement : MonoBehaviour
 
     public Light spotLight;
 
+    public bool canStart = false;
 
 
 
@@ -59,7 +60,11 @@ public class PlayerUIManagement : MonoBehaviour
     {
         topCross.GetComponent<RectTransform>().position = new Vector3(botStartPos.x, botStartPos.y - spotLight.spotAngle, botStartPos.z);
         botCross.GetComponent<RectTransform>().position = new Vector3(topStartPos.x, topStartPos.y + spotLight.spotAngle, topStartPos.z);
-        Display();
+        if (canStart)
+        {
+            Display();
+        }
+
     }
 
     private void Display()

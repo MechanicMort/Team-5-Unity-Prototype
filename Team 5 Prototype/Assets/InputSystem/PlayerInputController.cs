@@ -75,19 +75,11 @@ public class PlayerInputController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        ApplyClass();
         thisGun = GetComponent<GunScript>();
-        ApplyWeaponStats();
         rb = GetComponent<Rigidbody>();
-        //these will be set by the game controller once class select is in place
-
-        abilityOneCoolDown = abilityOne.coolDown;
         StartCoroutine(RegenTimerTicker());
         StartCoroutine(AbilityCoolDowns());
-        if (currentClass.name == "Scout")
-        {
-            hasDoubleJump = true;
-        }
+
     }
 
     private void CheckDead()
@@ -153,9 +145,9 @@ public class PlayerInputController : MonoBehaviour
     {
 
         RaycastHit raycastHit;
-
         if (Physics.Raycast(transform.position, -Vector3.up, out raycastHit) && isAttemptSquid)
         {
+
             Renderer renderer = raycastHit.collider.GetComponent<MeshRenderer>();
             Texture2D texture2D = renderer.material.GetTexture("_TexMask") as Texture2D;
             Vector2 pCoord = raycastHit.textureCoord2;
@@ -206,6 +198,9 @@ public class PlayerInputController : MonoBehaviour
     }
     public void ApplyClass()
     {
+        print("Applying Class :");
+        print(currentClass.name);
+
         playerHealthMax = currentClass.HealthMax;
         playerHealth = currentClass.HealthMax;
         playerShieldMax = currentClass.ShieldMax;
@@ -220,11 +215,15 @@ public class PlayerInputController : MonoBehaviour
         abilityOne.abilityOwner = this.gameObject;
         abilityTwo.abilityOwner = this.gameObject;
         Ultimate.abilityOwner = this.gameObject;
+        if (currentClass.name == "RedScout" || currentClass.name == "BlueScout")
+        {
+            hasDoubleJump = true;
+        }
     }
 
     private void FullReset()
     {
-        ApplyClass();
+      //  ApplyClass();
         ApplyWeaponStats();
     }
 
@@ -369,14 +368,12 @@ public class PlayerInputController : MonoBehaviour
         {
             if (CheckForGrounded())
             {
-                Debug.Log("Jumped");
                 rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             }
             else if (!CheckForGrounded() && hasDoubleJumpUp)
             {
                 hasDoubleJumpUp = false;
                 abilityTwoCoolDown = abilityTwo.coolDown;
-                Debug.Log("Double Jumped");
                 rb.AddForce(new Vector3(0, jumpForce * 1.3f, 0), ForceMode.Impulse);
             }
         }

@@ -30,7 +30,28 @@ public class AiMovement : MonoBehaviour
         {
             SetDest();
         }
+        Vector3 mask = new Vector3(0, 0, 0); //: new Vector3(0, 1, 0);
+        // Does the ray intersect any objects excluding the player layer
+        var colliders = Physics.OverlapSphere(transform.position, 1.5f);
+        if (colliders.Length > 0)
+        {
+            foreach (var cld in colliders)
+            {
+                Vector3 dir = GetComponent<Rigidbody>().velocity;
+                var paintController = cld.transform.GetComponent<UVPaintController>();
+                if (paintController != null)
+                {
+                    paintController.PaintOnGO(transform.position, dir, mask, 1);
+                    paintController.PaintOnGO(transform.position + new Vector3(2.5f,0, 0), dir, mask, 1);
+                    paintController.PaintOnGO(transform.position + new Vector3(0,0, 2.5f), dir, mask, 1);
+                    paintController.PaintOnGO(transform.position + new Vector3(0, 0, -2.5f), dir, mask, 1);
+                    paintController.PaintOnGO(transform.position + new Vector3(-2.5f, 0, 0), dir, mask, 1);
+                }
+            }
+        }
+
     }
+    
 
 
     public GameObject GetRandomNode()

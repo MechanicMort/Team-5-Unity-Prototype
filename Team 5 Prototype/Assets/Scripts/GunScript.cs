@@ -52,7 +52,6 @@ public class GunScript : MonoBehaviour
         {
             ammoCount -= 1;
             fireRateCounter = fireRate / fireRateMod;
-            print(fireRateMod);
             for (int i = 0; i < shots; i++)
             {
                 float radius = Mathf.Tan(Mathf.Deg2Rad * spotLight.spotAngle / 2) * spotLight.range;

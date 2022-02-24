@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ebdf988b9368244852e8629758f252, type: 3}
+  m_Name: BlueHeavy
+  m_EditorClassIdentifier: 
+  ShieldRegen: 0.3
+  HealthRegen: 0.2
+  HealthMax: 150
+  ShieldMax: 50
+  moveSpeed: 8
+  jumpForce: 12
+  ability1: {fileID: 11400000, guid: 5d27cbe166278114899a7f2378ff3bb5, type: 2}
+  ability2: {fileID: 11400000, guid: 6b77cc1982e0001478b96014d525e227, type: 2}
+  Ultimate: {fileID: 11400000, guid: d879a808fe0f51e4990522ee5ca87cc4, type: 2}
