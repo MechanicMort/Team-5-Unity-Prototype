@@ -79,6 +79,7 @@ public class PlayerInputController : MonoBehaviour
         ApplyClass();
         thisGun = GetComponent<GunScript>();
         ApplyWeaponStats();
+        thisGun.Reload();
         rb = GetComponent<Rigidbody>();
         //these will be set by the game controller once class select is in place
 
@@ -107,6 +108,7 @@ public class PlayerInputController : MonoBehaviour
         RegenPlayer();
         OverCalcs();
         Movement();
+        Look();
         GetColour();
         thisGun.fireRateMod = fireRateMulti;
 
@@ -127,6 +129,15 @@ public class PlayerInputController : MonoBehaviour
         rb.velocity = newMovePos;
 
 
+    }
+
+    void Look()
+    {
+        mX += cameraInput.x * mouseSen;
+        mY -= cameraInput.y * mouseSen;
+        mY = Mathf.Clamp(mY, -80, 80);
+        camera.transform.rotation = Quaternion.Euler(mY, mX, 0);
+        player.transform.rotation = Quaternion.Euler(0, mX, 0);
     }
 
 
@@ -195,7 +206,6 @@ public class PlayerInputController : MonoBehaviour
         thisGun.accuracy = heldWeapon.accuracy;
         thisGun.recoilAmount = heldWeapon.recoilAmount;
         thisGun.gunMesh = heldWeapon.weaponMesh;
-        //thisGun.shootingSound = heldWeapon.weaponNoise;
 
     }
     public void ApplyClass()
@@ -376,11 +386,7 @@ public class PlayerInputController : MonoBehaviour
     {
         cameraInput = context.ReadValue<Vector2>();
 
-        mX += cameraInput.x * mouseSen;
-        mY -= cameraInput.y * mouseSen;
-        mY = Mathf.Clamp(mY, -80, 80);
-        camera.transform.rotation = Quaternion.Euler(mY, mX, 0);
-        player.transform.rotation = Quaternion.Euler(0, mX, 0);
+       
 
 
 
