@@ -22,25 +22,17 @@ public class GunScript : MonoBehaviour
     public float accuracy;
     public float recoilAmount;
     public bool isSquid;
-    public Mesh gunMesh;
-    public MeshFilter meshFil;
-    public AudioClip shotSound;
-    public AudioSource shootingSound;
-    private bool audioPlayed;
 
     private void Start()
     {
-        audioPlayed = false;
         ammoCount = magazineSize;
         fireRateCounter = fireRate;
         StartCoroutine(fireRateController());
-        //meshFil = GetComponent<MeshFilter>();
     }
     private void Update()
     {
         //ammoCountText.text = ammoCount + "/" + magazineSize;
         spotLight.GetComponent<SpotlightDilation>().accuracy = accuracy;
-        meshFil.mesh = gunMesh;
 
     }
 
@@ -57,16 +49,9 @@ public class GunScript : MonoBehaviour
 
     }
     public void ShootBullet()
-    {        
-
+    {
         if (fireRateCounter <= 0 && ammoCount != 0 && isSquid == false)
         {
-            if (!audioPlayed)
-            {
-                shootingSound.PlayOneShot(shotSound);
-                audioPlayed = true;
-            }
-
             ammoCount -= 1;
             fireRateCounter = fireRate / fireRateMod;
             for (int i = 0; i < shots; i++)
@@ -89,10 +74,8 @@ public class GunScript : MonoBehaviour
             }
             spotLight.GetComponent<SpotlightDilation>().Recoil(recoilAmount);
         }
-
-        audioPlayed = false;
-
-
+        
+        
     }
 
     public void ThrowNade(string nadeType)

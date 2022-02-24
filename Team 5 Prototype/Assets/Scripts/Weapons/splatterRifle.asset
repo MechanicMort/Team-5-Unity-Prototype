@@ -22,4 +22,3 @@ MonoBehaviour:
   recoilAmount: 2
   weaponName: splatterRifle
   weaponMesh: {fileID: 4300000, guid: 6f966b9a7c817ed49973b4a8762cbbdf, type: 3}
-  weaponNoise: {fileID: 8300000, guid: 88028d39f9ce6a3408f9fc4e2a653ae9, type: 3}

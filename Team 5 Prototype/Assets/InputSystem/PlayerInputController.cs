@@ -40,7 +40,6 @@ public class PlayerInputController : MonoBehaviour
     public WeaponStats heldWeapon;
     private GunScript thisGun;
     private bool isShoot;
-    public AudioSource shootingSound;
 
     [Header("Player Class")]
     public ClassHolder currentClass;
@@ -76,22 +75,21 @@ public class PlayerInputController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        ApplyClass();
         thisGun = GetComponent<GunScript>();
-        ApplyWeaponStats();
-        thisGun.Reload();
         rb = GetComponent<Rigidbody>();
-        //these will be set by the game controller once class select is in place
-
-        abilityOneCoolDown = abilityOne.coolDown;
         StartCoroutine(RegenTimerTicker());
         StartCoroutine(AbilityCoolDowns());
-        if (currentClass.name == "Scout")
-        {
-            hasDoubleJump = true;
-        }
+
     }
 
+    private void CheckDead()
+    {
+        if (playerHealth<= 0)
+        {
+            FullReset();
+           transform.position = GameObject.FindGameObjectsWithTag("Spawn Point")[Random.Range(0,GameObject.FindGameObjectsWithTag("Spawn Point").Length-1) ].transform.position;
+        }
+    }
     public void RestoreValue(float time)
     {
         StartCoroutine(RestoreNormal(time));
@@ -108,12 +106,12 @@ public class PlayerInputController : MonoBehaviour
         RegenPlayer();
         OverCalcs();
         Movement();
-        Look();
         GetColour();
+        CheckDead();
         thisGun.fireRateMod = fireRateMulti;
-
         if (isShoot)
-        {           
+        {
+            
             thisGun.ShootBullet();
         }
     }
@@ -129,15 +127,6 @@ public class PlayerInputController : MonoBehaviour
         rb.velocity = newMovePos;
 
 
-    }
-
-    void Look()
-    {
-        mX += cameraInput.x * mouseSen;
-        mY -= cameraInput.y * mouseSen;
-        mY = Mathf.Clamp(mY, -80, 80);
-        camera.transform.rotation = Quaternion.Euler(mY, mX, 0);
-        player.transform.rotation = Quaternion.Euler(0, mX, 0);
     }
 
 
@@ -156,9 +145,9 @@ public class PlayerInputController : MonoBehaviour
     {
 
         RaycastHit raycastHit;
-
         if (Physics.Raycast(transform.position, -Vector3.up, out raycastHit) && isAttemptSquid)
         {
+
             Renderer renderer = raycastHit.collider.GetComponent<MeshRenderer>();
             Texture2D texture2D = renderer.material.GetTexture("_TexMask") as Texture2D;
             Vector2 pCoord = raycastHit.textureCoord2;
@@ -205,11 +194,13 @@ public class PlayerInputController : MonoBehaviour
         thisGun.shots = heldWeapon.pelletCount;
         thisGun.accuracy = heldWeapon.accuracy;
         thisGun.recoilAmount = heldWeapon.recoilAmount;
-        thisGun.gunMesh = heldWeapon.weaponMesh;
 
     }
     public void ApplyClass()
     {
+        print("Applying Class :");
+        print(currentClass.name);
+
         playerHealthMax = currentClass.HealthMax;
         playerHealth = currentClass.HealthMax;
         playerShieldMax = currentClass.ShieldMax;
@@ -224,6 +215,16 @@ public class PlayerInputController : MonoBehaviour
         abilityOne.abilityOwner = this.gameObject;
         abilityTwo.abilityOwner = this.gameObject;
         Ultimate.abilityOwner = this.gameObject;
+        if (currentClass.name == "RedScout" || currentClass.name == "BlueScout")
+        {
+            hasDoubleJump = true;
+        }
+    }
+
+    private void FullReset()
+    {
+      //  ApplyClass();
+        ApplyWeaponStats();
     }
 
     private IEnumerator AbilityCoolDowns()
@@ -367,14 +368,12 @@ public class PlayerInputController : MonoBehaviour
         {
             if (CheckForGrounded())
             {
-                Debug.Log("Jumped");
                 rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             }
             else if (!CheckForGrounded() && hasDoubleJumpUp)
             {
                 hasDoubleJumpUp = false;
                 abilityTwoCoolDown = abilityTwo.coolDown;
-                Debug.Log("Double Jumped");
                 rb.AddForce(new Vector3(0, jumpForce * 1.3f, 0), ForceMode.Impulse);
             }
         }
@@ -386,7 +385,11 @@ public class PlayerInputController : MonoBehaviour
     {
         cameraInput = context.ReadValue<Vector2>();
 
-       
+        mX += cameraInput.x * mouseSen;
+        mY -= cameraInput.y * mouseSen;
+        mY = Mathf.Clamp(mY, -80, 80);
+        camera.transform.rotation = Quaternion.Euler(mY, mX, 0);
+        player.transform.rotation = Quaternion.Euler(0, mX, 0);
 
 
 

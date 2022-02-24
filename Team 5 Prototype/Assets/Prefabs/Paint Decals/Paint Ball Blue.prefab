@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3601174364275865057}
   - component: {fileID: 4491061994849680190}
   - component: {fileID: 7438466333182298539}
-  - component: {fileID: 42496362291734175}
   - component: {fileID: 1868349631694975317}
   - component: {fileID: 4581933772387589227}
-  m_Layer: 12
+  - component: {fileID: -7289147259798311351}
+  m_Layer: 0
   m_Name: Paint Ball Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4345014121766515616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -115,21 +115,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &42496362291734175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345014121766515616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5c295537f49ea4fb3ec9f5abb2e71d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 4345014121766515616}
-  paintSplatter: {fileID: 5781521927981723603, guid: b90366db6c190bf45947aa268918c74f, type: 3}
-  particles: {fileID: 8479362636630943915, guid: fa5e95f6014d24e4380cb4c37b645b4c, type: 3}
 --- !u!114 &1868349631694975317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +142,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatTeam: 11
   damageDelt: 10
+--- !u!114 &-7289147259798311351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345014121766515616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5c295537f49ea4fb3ec9f5abb2e71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 0}
+  paintSplatter: {fileID: 0}
