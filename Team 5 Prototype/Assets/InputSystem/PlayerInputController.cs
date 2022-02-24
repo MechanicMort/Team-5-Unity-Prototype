@@ -223,7 +223,15 @@ public class PlayerInputController : MonoBehaviour
 
     private void FullReset()
     {
-      //  ApplyClass();
+        if (this.gameObject.layer == 10)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().ChangeScore("Blue");
+        }
+        if (this.gameObject.layer == 11)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().ChangeScore("Red");
+        }
+        ApplyClass();
         ApplyWeaponStats();
     }
 

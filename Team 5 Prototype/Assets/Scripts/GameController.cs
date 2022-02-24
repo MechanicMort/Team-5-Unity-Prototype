@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class GameController : MonoBehaviour
         public WeaponStats[] weapons = new WeaponStats[6];
         public GameObject[] players = new GameObject[2];
         public GameObject[] playersUI = new GameObject[2];
+    public Text scoreKeep;
+    public float redScore;
+    public float blueScore;
 
 
 
@@ -19,6 +24,17 @@ public class GameController : MonoBehaviour
         AssignPlayers();
     }
 
+    public void ChangeScore(string team)
+    {
+        if (team == "Red")
+        {
+            redScore += 1;
+        }
+        if (team == "Blue")
+        {
+            blueScore += 1;
+        }
+    }
 
     private void AssignPlayers()
     {
@@ -66,6 +82,18 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        scoreKeep.text = "Blue =" + blueScore.ToString();
+        scoreKeep.text += ":";
+        scoreKeep.text += "Red =" + redScore.ToString();
+        if (blueScore >= 10)
+        {
+            SceneManager.LoadScene(0);
+        }
+        if (redScore >= 10)
+        {
+            SceneManager.LoadScene(0);
+        }
+
+
     }
 }
