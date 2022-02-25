@@ -6,6 +6,7 @@ public class DestroyBullet : MonoBehaviour
 {
     public GameObject obj;
     public GameObject paintSplatter;
+    //public GameObject particles;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class DestroyBullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
+        //Instantiate(particles, this.transform.position, Quaternion.identity);
         Destroy(obj);        
     }
 }

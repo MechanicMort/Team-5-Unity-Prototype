@@ -156,3 +156,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 4345014121766515616}
   paintSplatter: {fileID: 0}
+  particles: {fileID: 8479362636630943915, guid: fa5e95f6014d24e4380cb4c37b645b4c, type: 3}

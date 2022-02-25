@@ -23,6 +23,10 @@ public class GunScript : MonoBehaviour
     public float recoilAmount;
     public bool isSquid;
 
+    public AudioClip shotSound;
+    public AudioSource shootingSound;
+    private bool audioPlayed;
+
     private void Start()
     {
         ammoCount = magazineSize;
@@ -52,6 +56,13 @@ public class GunScript : MonoBehaviour
     {
         if (fireRateCounter <= 0 && ammoCount != 0 && isSquid == false)
         {
+            if (!audioPlayed)
+            {
+                shootingSound.PlayOneShot(shotSound);
+                audioPlayed = true;
+            }
+
+
             ammoCount -= 1;
             fireRateCounter = fireRate / fireRateMod;
             for (int i = 0; i < shots; i++)
@@ -74,8 +85,9 @@ public class GunScript : MonoBehaviour
             }
             spotLight.GetComponent<SpotlightDilation>().Recoil(recoilAmount);
         }
-        
-        
+
+        audioPlayed = false;
+
     }
 
     public void ThrowNade(string nadeType)

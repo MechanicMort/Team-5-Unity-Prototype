@@ -82,9 +82,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreKeep.text = "Blue =" + blueScore.ToString();
-        scoreKeep.text += ":";
-        scoreKeep.text += "Red =" + redScore.ToString();
+        scoreKeep.text = "Red = " + redScore.ToString();
+        scoreKeep.text += "  :  ";
+        scoreKeep.text += "Blue = " + blueScore.ToString();
         if (blueScore >= 10)
         {
             SceneManager.LoadScene(0);
