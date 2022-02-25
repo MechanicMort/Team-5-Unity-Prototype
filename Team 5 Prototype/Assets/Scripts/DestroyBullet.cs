@@ -7,10 +7,12 @@ public class DestroyBullet : MonoBehaviour
     public GameObject obj;
     public GameObject paintSplatter;
 
-
+    private void Awake()
+    {
+        Destroy(obj, 3f);
+    }
     private void OnTriggerEnter(Collider collision)
     {
-        Destroy(obj);
-        
+        Destroy(obj);        
     }
 }
