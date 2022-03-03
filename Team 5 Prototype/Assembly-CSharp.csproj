@@ -80,9 +80,9 @@
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\UVPainter.cs" />
     <Compile Include="Assets\Scripts\GravityLifts.cs" />
+    <Compile Include="Assets\Scripts\ObjDestory.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
     <Compile Include="Assets\MeshPainting\Scripts\UVPaintController.cs" />
-    <Compile Include="Assets\Scripts\ObjDestory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshPainting\Shaders\PaintOnUV.shader" />

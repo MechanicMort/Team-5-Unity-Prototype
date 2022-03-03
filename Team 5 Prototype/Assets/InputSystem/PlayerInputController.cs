@@ -409,16 +409,19 @@ public class PlayerInputController : MonoBehaviour
     private bool CheckForGrounded()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit,2f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit,2.1f))
         {
+            print("Checking");
             if (hasDoubleJump)
             {
                 hasDoubleJumpUp = true;
                 abilityTwoCoolDown = 0;
             }
-
+            print("True");
             return true;
         }
+
+        print("False");
         return false;
 
     }
