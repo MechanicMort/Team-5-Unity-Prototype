@@ -11,8 +11,12 @@ public class AISpawnSystem : MonoBehaviour
     {
         count = 0;
         StartCoroutine("AISpawner");
+        
 
     }
+
+
+
 
     IEnumerator AISpawner()
     {

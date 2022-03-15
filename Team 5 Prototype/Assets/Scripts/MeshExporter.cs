@@ -239,8 +239,8 @@ public class MeshExporter : MonoBehaviour
 		for (int i = 0; i < vertPos.Length; ++i)
 		{
 			Vector4 localVert = new Vector4(vertPos[i].x, vertPos[i].y, vertPos[i].z, 1.0f);
-		allVertPos.Add(transform * localVert);
-			//allVertPos.Add(localVert);
+		//allVertPos.Add(transform * localVert);
+			allVertPos.Add(localVert);
 		}
 
 		if (skin)

@@ -12,7 +12,7 @@ public class GravityLifts : MonoBehaviour
 
         if (collision.gameObject.CompareTag("BoostPad"))
         {
-            rb.AddForce(Vector3.up * 35f, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * 45f, ForceMode.Impulse);
         }
     }
 }
