@@ -13,6 +13,8 @@ public class MeshExporter : MonoBehaviour
 	[SerializeField]
 	string animName = "";
 
+	public string path = "";
+
 	SkinnedMeshRenderer[] skinnedRenderers;
 	MeshRenderer[] renderers;
 
@@ -362,8 +364,9 @@ public class MeshExporter : MonoBehaviour
 		int expectedAttribCount = 0;
 		int exportedAttribCount = 0;
 
+		string pathOut = Path.Combine(path, this.name + ".msh");
 		using (System.IO.StreamWriter file =
-			new System.IO.StreamWriter(this.name + ".msh", false)) {
+			new System.IO.StreamWriter(pathOut, false)) {
 
 			foreach (SkinnedMeshRenderer r in skinnedRenderers)
 			{
@@ -562,7 +565,8 @@ public class MeshExporter : MonoBehaviour
 			filename = this.name;
         }
 
-		using (System.IO.StreamWriter file = new System.IO.StreamWriter(filename + ".anm", false))
+		string pathOut = Path.Combine(path, filename + ".anm");
+		using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathOut, false))
 		{
 			file.WriteLine("MeshAnim");
 			file.WriteLine(1);

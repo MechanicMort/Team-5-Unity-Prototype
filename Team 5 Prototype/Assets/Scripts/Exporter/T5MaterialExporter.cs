@@ -10,6 +10,11 @@ public class T5MaterialExporter : MonoBehaviour
 {
     public string pathOut = "./";
 
+    public bool isURP = true;
+
+    public bool autoCopyDependencies = true;
+    public string pathDependenciesOut = "./";
+
     public List<Material> materials;
 
     // Start is called before the first frame update
@@ -20,11 +25,11 @@ public class T5MaterialExporter : MonoBehaviour
             string filename = materials[i].name+".mat";
             string outputPath = Path.Combine(pathOut, filename);
             JsonData json = "";
-            if(MaterialExporter.StandardMaterialToJson(materials[i], out json))
+            if(MaterialExporter.StandardMaterialToJson(materials[i], out json, isURP, true, pathDependenciesOut))
             {
                 string str;
                 ExporterHelper.JsonToString(json, out str);
-                FileIO.WriteTextToFile(outputPath, str);
+                FileHelper.WriteTextToFile(outputPath, str);
             }
         }
     }

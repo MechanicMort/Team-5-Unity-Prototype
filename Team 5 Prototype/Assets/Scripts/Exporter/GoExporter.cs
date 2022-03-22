@@ -18,7 +18,7 @@ public class GoExporter
             root["parentId"] = parentID;
         }
         root["name"] = go.name;
-        
+
         root["transform"] = new JsonData();
         root["transform"]["position"] = new JsonData();
         root["transform"]["position"].Add(0);
@@ -29,7 +29,7 @@ public class GoExporter
         root["transform"]["position"][2] = invertHandedness ? -go.transform.localPosition.z : go.transform.localPosition.z;
         root["transform"]["orientation"] = new JsonData();
         var rot = go.transform.localRotation;
-        if (invertHandedness) rot.x = -rot.x;
+        if (invertHandedness) { rot.x = -rot.x; rot.y = -rot.y; rot.z = rot.z; }
         root["transform"]["orientation"].Add(0);
         root["transform"]["orientation"][0] = rot.x;
         root["transform"]["orientation"].Add(0);
@@ -44,6 +44,7 @@ public class GoExporter
         root["transform"]["scale"].Add(0);
         root["transform"]["scale"][1] = go.transform.localScale.y;
         root["transform"]["scale"].Add(0);
+        root["transform"]["scale"][2] = go.transform.localScale.z;
         root["transform"]["scale"][2] = go.transform.localScale.z;
 
         //

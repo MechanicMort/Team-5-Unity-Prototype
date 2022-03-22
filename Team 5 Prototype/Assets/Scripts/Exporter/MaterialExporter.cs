@@ -4,11 +4,39 @@ using UnityEngine;
 
 using LitJson;
 using System;
+using UnityEditor;
+using System.IO;
+using UnityEngine.Rendering;
 
 public class MaterialExporter
 {
-    public static bool StandardMaterialToJson(Material mat, out JsonData root)
+    public static bool StandardMaterialToJson(Material mat, out JsonData root, bool isURP,
+                                                bool toCopyTextures = false, string dirDst = "./")
     {
+        string texNameBump, texNameMetallic, texNameSmoothness, texNameAO;
+        string floatNameMetallic0, floatNameMetallic1, floatNameSmoothness0, floatNameSmoothness1, floatNameOcclusion;
+        
+        texNameBump = "_BumpMap";
+        texNameMetallic = "_MetallicGlossMap";
+        texNameSmoothness = "_SpecGlossMap";
+        texNameAO = "_OcclusionMap";
+        if (!isURP)
+        {
+            floatNameMetallic0 = "_GlossMapScale";
+            floatNameMetallic1 = "_Metallic";
+            floatNameSmoothness0 = "_GlossMapScale";
+            floatNameSmoothness1 = "_Glossiness";
+            floatNameOcclusion = "_OcclusionStrength";
+        }
+        else
+        {
+            floatNameMetallic0 = "_Smoothness";
+            floatNameMetallic1 = "_Metallic";
+            floatNameSmoothness0 = "_Smoothness";
+            floatNameSmoothness1 = "_Smoothness";
+            floatNameOcclusion = "_OcclusionStrength";
+        }
+
         root = new JsonData();
         root["name"] = mat.name;
 
@@ -28,12 +56,17 @@ public class MaterialExporter
             s_texColor["type"] = "texture";
             s_texColor["value"] = mat.mainTexture.name;
             root["params"].Add(s_texColor);
+
+            if (toCopyTextures)
+            {
+                CopyDependencyTexture(mat.mainTexture, dirDst);
+            }
         }
 
         //s_texNormal
         try
         {
-            var texNormalMap = mat.GetTexture("_BumpMap");
+            var texNormalMap = mat.GetTexture(texNameBump);
             if (texNormalMap)
             {
                 JsonData s_texNormal = new JsonData();
@@ -41,6 +74,11 @@ public class MaterialExporter
                 s_texNormal["type"] = "texture";
                 s_texNormal["value"] = texNormalMap.name;
                 root["params"].Add(s_texNormal);
+
+                if (toCopyTextures)
+                {
+                    CopyDependencyTexture(texNormalMap, dirDst);
+                }
             }
         }
         catch(Exception)
@@ -52,7 +90,7 @@ public class MaterialExporter
         //s_texMetallic
         try
         {
-            var texMetallic = mat.GetTexture("_MetallicGlossMap");
+            var texMetallic = mat.GetTexture(texNameMetallic);
             if (texMetallic)
             {
                 JsonData s_texMetallic = new JsonData();
@@ -61,7 +99,16 @@ public class MaterialExporter
                 s_texMetallic["value"] = texMetallic.name;
                 root["params"].Add(s_texMetallic);
 
-                metallic = mat.GetFloat("_GlossMapScale");
+                metallic = mat.GetFloat(floatNameMetallic0);
+
+                if (toCopyTextures)
+                {
+                    CopyDependencyTexture(texMetallic, dirDst);
+                }
+            }
+            else
+            {
+                metallic = mat.GetFloat(floatNameMetallic1);
             }
         }
         catch (Exception)
@@ -72,7 +119,7 @@ public class MaterialExporter
         //s_texSmoothness
         try
         {
-            var texSmoothness = mat.GetTexture("_SpecGlossMap");
+            var texSmoothness = mat.GetTexture(texNameSmoothness);
             if (texSmoothness)
             {
                 JsonData s_texSmoothness = new JsonData();
@@ -81,7 +128,16 @@ public class MaterialExporter
                 s_texSmoothness["value"] = texSmoothness.name;
                 root["params"].Add(s_texSmoothness);
 
-                smoothness = mat.GetFloat("_GlossMapScale");
+                smoothness = mat.GetFloat(floatNameSmoothness0);
+
+                if (toCopyTextures)
+                {
+                    CopyDependencyTexture(texSmoothness, dirDst);
+                }
+            }
+            else
+            {
+                metallic = mat.GetFloat(floatNameSmoothness1);
             }
         }
         catch (Exception)
@@ -92,7 +148,7 @@ public class MaterialExporter
         //s_texAO
         try
         {
-            var texAO = mat.GetTexture("_OcclusionMap");
+            var texAO = mat.GetTexture(texNameAO);
             if (texAO)
             {
                 JsonData s_texAO = new JsonData();
@@ -101,7 +157,12 @@ public class MaterialExporter
                 s_texAO["value"] = texAO.name;
                 root["params"].Add(s_texAO);
 
-                aoStrength = mat.GetFloat("_OcclusionStrength");
+                aoStrength = mat.GetFloat(floatNameOcclusion);
+
+                if (toCopyTextures)
+                {
+                    CopyDependencyTexture(texAO, dirDst);
+                }
             }
         }
         catch(Exception)
@@ -126,5 +187,16 @@ public class MaterialExporter
         root["params"].Add(u_pbrParam);
 
         return true;
+    }
+
+    protected static void CopyDependencyTexture(Texture tex, string dirDst)
+    {
+        string pathOrg = AssetDatabase.GetAssetPath(tex);
+        string dirOrg = Path.GetDirectoryName(pathOrg);
+        string filename = Path.GetFileName(pathOrg);
+        if (!FileHelper.CopyFileFromTo(dirOrg, dirDst, filename))
+        {
+            throw new FileNotFoundException();
+        }
     }
 }

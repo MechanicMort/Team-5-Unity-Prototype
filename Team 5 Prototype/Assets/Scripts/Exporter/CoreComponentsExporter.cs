@@ -17,8 +17,14 @@ public class CoreComponentsExporter
         {
             return false;
         }
-        json["mesh"] = renderer.GetComponent<MeshFilter>().sharedMesh.name;
-        json["material"] = renderer.sharedMaterial.name;
+        json["mesh"] = MyMeshExporter.ProcMeshName(renderer.GetComponent<MeshFilter>().sharedMesh.name);
+        json["materials"] = new JsonData();
+        for (int count = 0; count < renderer.sharedMaterials.Length; ++count) 
+        {
+            json["materials"].Add(0);
+            json["materials"][count] = renderer.sharedMaterials[count].name;
+        }
+        
         return true;
     }
 

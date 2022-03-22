@@ -51,7 +51,7 @@ public class T5SceneExporter : MonoBehaviour
         string outputPath = Path.Combine(pathOut, filename);
         string str;
         ExporterHelper.JsonToString(jsonScene, out str);
-        FileIO.WriteTextToFile(outputPath, str);
+        FileHelper.WriteTextToFile(outputPath, str);
     }
 
     // Update is called once per frame

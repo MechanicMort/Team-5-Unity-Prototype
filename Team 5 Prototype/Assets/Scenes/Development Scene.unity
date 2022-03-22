@@ -732,6 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &145353979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &296785951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4958538023392519991, guid: 846b65c56aae9f84cbf3df1e315aaba8, type: 3}
@@ -1326,6 +1328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &302487722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3032534813081224970, guid: 846b65c56aae9f84cbf3df1e315aaba8, type: 3}
@@ -1345,6 +1348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &333320419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &419753228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,6 +2842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1001 &717714909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3242,6 +3248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &790190671
 GameObject:
   m_ObjectHideFlags: 0
@@ -4719,6 +4726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &1451402674
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,6 +4841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &1487611851
 GameObject:
   m_ObjectHideFlags: 0
@@ -5028,6 +5037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &1600633287 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8181712612116556150, guid: 846b65c56aae9f84cbf3df1e315aaba8, type: 3}
@@ -5047,6 +5057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!20 &1646739602 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8318502092494901915, guid: dfdbe1da03e1bc444a0402caece5d62c, type: 3}
@@ -5071,6 +5082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &1733828100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5741,6 +5753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &1914478057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 656882779864163744, guid: 846b65c56aae9f84cbf3df1e315aaba8, type: 3}
@@ -5760,6 +5773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &1916810475
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,6 +5995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1 &1948985294
 GameObject:
   m_ObjectHideFlags: 0
@@ -6172,7 +6187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ca414d4aff45746b97d0e312efd723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathOut: H:\Desktop\Team 5 Game\Team5Repo\Games\Assets\Scenes
+  pathOut: D:\Sources\Files\Projects\Team5Repo\Team5Repo\Games\Assets\Scenes\
   invertHandedness: 1
 --- !u!114 &1960128883
 MonoBehaviour:
@@ -6187,6 +6202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathOut: H:\Desktop\Team 5 Game\Team5Repo\Games\Assets\Materials
+  isURP: 1
+  autoCopyDependencies: 1
+  pathDependenciesOut: ./
   materials:
   - {fileID: 2100000, guid: e1c55dbbd0dfcbf48b6ff4f4182a1255, type: 2}
 --- !u!4 &1960128884
@@ -6724,6 +6742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipZAxis: 0
   animName: 
+  path: 
 --- !u!1001 &555496351670282620
 PrefabInstance:
   m_ObjectHideFlags: 0
