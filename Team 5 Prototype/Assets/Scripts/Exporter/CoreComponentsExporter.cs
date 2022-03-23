@@ -80,13 +80,13 @@ public class CoreComponentsExporter
         json["colourAndIntensity"].Add(0);
         json["colourAndIntensity"][2] = light.color.b;
         json["colourAndIntensity"].Add(0);
-        json["colourAndIntensity"][3] = light.intensity;
+        json["colourAndIntensity"][3] = light.intensity * 3;
         json["castShadow"] = (light.shadows > 0);
 
         return true;
     }
 
-    public static bool ColliderToJson(Collider collider, out JsonData json)
+    public static bool ColliderToJson(Collider collider, out JsonData json, bool invertZ = false)
     {
         json = new JsonData();
         int colliderType = -1;
@@ -94,14 +94,20 @@ public class CoreComponentsExporter
         {
             colliderType = 0;
             json["typeCollider"] = colliderType;
-            ExporterHelper.AddVal("center", ((SphereCollider)collider).center, ref json);
+            Vector3 center = ((SphereCollider)collider).center;
+            if (invertZ)
+                center.z = -center.z;
+            ExporterHelper.AddVal("center", center, ref json);
             json["radius"] = ((SphereCollider)collider).radius;
         }
         else if (collider.GetType() == typeof(BoxCollider))
         {
             colliderType = 1;
             json["type"] = colliderType;
-            ExporterHelper.AddVal("center", ((BoxCollider)collider).center, ref json);
+            Vector3 center = ((BoxCollider)collider).center;
+            if (invertZ)
+                center.z = -center.z;
+            ExporterHelper.AddVal("center", center, ref json);
             ExporterHelper.AddVal("halfXYZ", ((BoxCollider)collider).size/2.0f, ref json);
 
         }
@@ -109,9 +115,12 @@ public class CoreComponentsExporter
         {
             colliderType = 2;
             json["type"] = colliderType;
-            ExporterHelper.AddVal("center", ((CapsuleCollider)collider).center, ref json);
+            Vector3 center = ((CapsuleCollider)collider).center;
+            if (invertZ)
+                center.z = -center.z;
+            ExporterHelper.AddVal("center", center, ref json);
             json["radius"] = ((CapsuleCollider)collider).radius;
-            json["halfHeight"] = ((CapsuleCollider)collider).height/2.0f;
+            json["halfHeight"] = ((CapsuleCollider)collider).height/2.0f - ((CapsuleCollider)collider).radius;
             //Note: Only support Y dir capsules. 
         }
         else

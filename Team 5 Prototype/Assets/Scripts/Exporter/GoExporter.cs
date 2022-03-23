@@ -71,15 +71,26 @@ public class GoExporter
                 data["isStatic"] = false;
                 data["mass"] = rb.mass;
                 data["useGravity"] = rb.useGravity;
+
+                bool lockLinearX = rb.constraints.HasFlag(RigidbodyConstraints.FreezePositionX);
+                bool lockLinearY = rb.constraints.HasFlag(RigidbodyConstraints.FreezePositionY);
+                bool lockLinearZ = rb.constraints.HasFlag(RigidbodyConstraints.FreezePositionZ);
+                bool lockAngularX = rb.constraints.HasFlag(RigidbodyConstraints.FreezeRotationX);
+                bool lockAngularY = rb.constraints.HasFlag(RigidbodyConstraints.FreezeRotationY);
+                bool lockAngularZ = rb.constraints.HasFlag(RigidbodyConstraints.FreezeRotationZ);
+                data["lockLinearX"] = lockLinearX;
+                data["lockLinearY"] = lockLinearY;
+                data["lockLinearZ"] = lockLinearZ;
+                data["lockAngularX"] = lockAngularX;
+                data["lockAngularY"] = lockAngularY;
+                data["lockAngularZ"] = lockAngularZ;
             }
             else
             {
                 data["isStatic"] = true;
-                data["mass"] = 0.0f;
-                data["useGravity"] = false;
             }
             JsonData colliderData;
-            if(CoreComponentsExporter.ColliderToJson(cld, out colliderData))
+            if(CoreComponentsExporter.ColliderToJson(cld, out colliderData, invertHandedness))
             {
                 data["collider"] = colliderData;
             }
