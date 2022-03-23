@@ -166,6 +166,12 @@ MonoBehaviour:
     invertZ: 1
   - mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
     invertZ: 1
+  - mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    invertZ: 1
+  - mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    invertZ: 1
+  - mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+    invertZ: 1
 --- !u!4 &522476074
 Transform:
   m_ObjectHideFlags: 0
@@ -219,6 +225,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 760a64abfc65a764a9ae90051a43f0dc, type: 2}
   - {fileID: 2100000, guid: 24eb2281912e8734ab8cfdb375c21339, type: 2}
   - {fileID: 2100000, guid: c2df1b12b6c66774b9570c90c039b080, type: 2}
+  - {fileID: 2100000, guid: e1c55dbbd0dfcbf48b6ff4f4182a1255, type: 2}
 --- !u!4 &975516532
 Transform:
   m_ObjectHideFlags: 0

@@ -174,7 +174,7 @@ public class MaterialExporter
         u_pbrParam["name"] = "u_pbrParam";
         u_pbrParam["type"] = "vector";
         JsonData u_pbrParamData = new JsonData();
-        float ambientComponent = 0.05f;
+        float ambientComponent = 0.1f;
         u_pbrParamData.Add(0);
         u_pbrParamData[0] = metallic;
         u_pbrParamData.Add(0);

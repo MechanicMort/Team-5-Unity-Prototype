@@ -18,6 +18,7 @@ public class GoExporter
             root["parentId"] = parentID;
         }
         root["name"] = go.name;
+        root["tag"] = go.tag;
 
         root["transform"] = new JsonData();
         root["transform"]["position"] = new JsonData();
@@ -57,6 +58,39 @@ public class GoExporter
         //
         //Core Components
         //
+        //PhysicsObject
+        var cld = go.GetComponent<Collider>();
+        var rb = go.GetComponent<Rigidbody>();
+        if (cld)
+        {
+            var componentRoot = new JsonData();
+            componentRoot["type"] = "T5PhysicsObject";
+            JsonData data = new JsonData();
+            if (rb)
+            {
+                data["isStatic"] = false;
+                data["mass"] = rb.mass;
+                data["useGravity"] = rb.useGravity;
+            }
+            else
+            {
+                data["isStatic"] = true;
+                data["mass"] = 0.0f;
+                data["useGravity"] = false;
+            }
+            JsonData colliderData;
+            if(CoreComponentsExporter.ColliderToJson(cld, out colliderData))
+            {
+                data["collider"] = colliderData;
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+            componentRoot["data"] = data;
+            componentsJson.Add(componentRoot);
+            hasComponent = true;
+        }
         //MeshRenderer
         var mr = go.GetComponent<MeshRenderer>();
         if (mr)

@@ -97,11 +97,17 @@ public class MyMeshExporter
 
             if (vertNormal.Length > 0)
             {
-                allNormals.AddRange(vertNormal);
+                foreach (Vector3 n in vertNormal)
+                {
+                    allNormals.Add(mat * n);
+                }
             }
             if (vertTangent.Length > 0)
             {
-                allTangents.AddRange(vertTangent);
+                foreach (Vector4 t in vertTangent)
+                {
+                    allTangents.Add(mat * t);
+                }
             }
             if (vertUV.Length > 0)
             {

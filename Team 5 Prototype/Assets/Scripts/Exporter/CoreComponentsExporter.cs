@@ -81,7 +81,59 @@ public class CoreComponentsExporter
         json["colourAndIntensity"][2] = light.color.b;
         json["colourAndIntensity"].Add(0);
         json["colourAndIntensity"][3] = light.intensity;
-        
+        json["castShadow"] = (light.shadows > 0);
+
+        return true;
+    }
+
+    public static bool ColliderToJson(Collider collider, out JsonData json)
+    {
+        json = new JsonData();
+        int colliderType = -1;
+        if      (collider.GetType() == typeof(SphereCollider))
+        {
+            colliderType = 0;
+            json["typeCollider"] = colliderType;
+            ExporterHelper.AddVal("center", ((SphereCollider)collider).center, ref json);
+            json["radius"] = ((SphereCollider)collider).radius;
+        }
+        else if (collider.GetType() == typeof(BoxCollider))
+        {
+            colliderType = 1;
+            json["type"] = colliderType;
+            ExporterHelper.AddVal("center", ((BoxCollider)collider).center, ref json);
+            ExporterHelper.AddVal("halfXYZ", ((BoxCollider)collider).size/2.0f, ref json);
+
+        }
+        else if (collider.GetType() == typeof(CapsuleCollider))
+        {
+            colliderType = 2;
+            json["type"] = colliderType;
+            ExporterHelper.AddVal("center", ((CapsuleCollider)collider).center, ref json);
+            json["radius"] = ((CapsuleCollider)collider).radius;
+            json["halfHeight"] = ((CapsuleCollider)collider).height/2.0f;
+            //Note: Only support Y dir capsules. 
+        }
+        else
+        {
+            throw new NotImplementedException();
+        }
+
+        json["material"] = new JsonData();
+        float staticFriction = 0.0f;
+        float dynamicFriction = 0.0f;
+        float restitution = 0.0f;
+        if (collider.sharedMaterial)
+        {
+            staticFriction = collider.sharedMaterial.staticFriction;
+            dynamicFriction = collider.sharedMaterial.dynamicFriction;
+            restitution = collider.sharedMaterial.bounciness;
+        }
+
+        json["material"]["staticFriction"] = staticFriction;
+        json["material"]["dynamicFriction"] = dynamicFriction;
+        json["material"]["restitution"] = restitution;
+
         return true;
     }
 }
